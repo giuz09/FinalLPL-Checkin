@@ -17,12 +17,23 @@ class Pasajero {
 	$db = BaseDatos::getInstance();			
 	$sql = "SELECT idPasajero, apellido, nombres, documento, 
 			correo, telefono 
-			FROM pasajero where documento like = ".$documento; 
+			FROM pasajero where documento = ".$documento; 
 	
 	$result=$db->ejecutar($sql);	
 	$datos =$db->resultados($result);
 	$this->buscarPasajeroDNI($datos);	
 	}
+
+	function buscarPasajeroVuelo($dni){	
+		$db = BaseDatos::getInstance();			
+		$sql = "SELECT idPasajero, apellido, nombres, documento, 
+				correo, telefono 
+				FROM pasajero where documento = ".$documento; 
+		
+		$result=$db->ejecutar($sql);	
+		$datos =$db->resultados($result);
+		$this->buscarPasajeroDNI($datos);	
+		}
 	
 		
 	public function getIdPasajero()
@@ -59,16 +70,11 @@ class Pasajero {
 		{ $this->documento = $v;}
 		
 	public function setCorreo($v)
-		{$this->vProteinas = $v;}
+		{$this->correo = $v;}
 			
-	public function setHidratos($v)
-		{ $this->vHidratos = $v;}	
+	public function setTelefono($v)
+		{ $this->telefono = $v;}	
 		
-	public function setGrasas($v)
-		{ $this->vGrasas = $v;}
-			
-	public function setIndice($v)
-		{ $this->vIg = $v;}
-	
+		
 }
 ?>
