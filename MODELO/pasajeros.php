@@ -58,7 +58,7 @@ class Pasajero {
 	public function setDocumento($v)
 		{ $this->documento = $v;}
 		
-	public function setProteinas($v)
+	public function setCorreo($v)
 		{$this->vProteinas = $v;}
 			
 	public function setHidratos($v)
