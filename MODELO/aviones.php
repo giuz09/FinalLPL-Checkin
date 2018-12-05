@@ -16,29 +16,25 @@ class Aviones {
 	
 
 
-	function tamanioGrillaAsientos($idAvion){	
+		function infoAvion($idAvion){	
 		$db = BaseDatos::getInstance();			
-		$sql = "SELECT filas, butacasFila 
+		$sql = "SELECT aviones.* 
 				FROM aviones where idAvion = '".$idAvion"'";
 		
 		$result=$db->ejecutar($sql);	
 		$datos =$db->resultados($result);
-		$this->datosAlimentos($datos);
-		
+		$this->datosAvion($datos);		
 		}
-
-		function asientosReservados($idAvion){	
-			$db = BaseDatos::getInstance();			
-			$sql = "SELECT filas, butacasFila 
-					FROM aviones where idAvion = '".$idAvion"'";
-			
-			$result=$db->ejecutar($sql);	
-			$datos =$db->resultados($result);
-			$this->datosAlimentos($datos);
-			
-			}	
 	
-	
+		function datosAvion($datos){
+				$this->idAvion = $datos['idAvion'];
+				$this->fabricante = $datos['fabricante'];
+				$this->modelo = $datos['modelo'];
+				$this->matricula = $datos['matricula'];
+				$this->filas = $datos['filas'];
+				$this->butacasFila = $datos['butacasFila'];
+				
+			}			
 	
 
 		
