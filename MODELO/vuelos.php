@@ -15,7 +15,40 @@ class Vuelos {
 	function __construct(){		
 	}
 
+
+		function infoVuelo($idVuelo){	
+		$db = BaseDatos::getInstance();			
+		$sql = "SELECT vuelos.* 
+				FROM vuelos where idVuelo = '".$idVuelo"'";
+		
+		$result=$db->ejecutar($sql);	
+		$datos =$db->resultados($result);
+		$this->datosVuelo($datos);		
+		}
 	
+		function datosVuelo($datos){		
+		$this->idVuelo = $datos['idVuelo'];
+		$this->numero = $datos['numero'];
+		$this->origen = $datos['origen'];
+		$this->destino = $datos['destino'];
+		$this->fecha = $datos['fecha'];
+		$this->horaSalida = $datos['horaSalida'];
+		$this->horaLlegada = $datos['horaLlegada'];
+		$this->idAvion = $datos['idAvion'];
+		}	
+
+
+		function asientosReservados($idVuelo){	
+			$db = BaseDatos::getInstance();			
+			$sql = "SELECT pasajerosvuelos.fila,pasajerosvuelos.butaca 
+					FROM vuelos 
+					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos'".$idVuelo"'";
+			
+			$result=$db->ejecutar($sql);	
+			$datos =$db->resultados($result);
+			return $this->db->query($query)->result_array();		
+		}
+			
 			
 		
 	public function getIdVuelo()
