@@ -27,15 +27,17 @@
 			<article>
 
 				<div id= "formulario"><br><br><br>
-					<form>
+					<form  action="muestrodatosPrueba.php" method="post" >
 					<fieldset form="formulario" id="campos" name="campos">
 						<legend> Ingrese sus datos</legend>
-						<br>DNI:<input type="textarea" id="dni" placeholder="Ej. 38517708" requiered><br>
-						<br>Nombre y apellido:<input type="textarea" id="nombreApellido" placeholder="Juan Perez" requiered><br>
-						<br>Fecha a viajar<input type="date" id="fechaViajar" min="07/04/2017" max="07/04/2050" required><br>
-						<br>Nro de vuelo:<input type="textarea" id="nroVuelo" placeholder="AB0089" requiered><br>
+						<br>DNI:<input type="textarea" id="dni" name="dni"placeholder="Ej. 38517708" requiered><br>
+						<br>Nombre y apellido:<input type="textarea" id="nombreApellido" name="nombre" placeholder="Juan Perez" requiered><br>
+						<br>Fecha a viajar<input type="date" id="fechaViajar" name="fecha" min="07/04/2017" max="07/04/2050" required><br>
+						<br>Nro de vuelo:<input type="textarea" id="nroVuelo" name="vuelo" placeholder="AB0089" requiered><br>
 											
-						<br><input name="Continuar" type="submit" id="Enviar" value="Continuar" onclick="BuscarPersona();">
+						<br>
+						  <input type="submit" name="submit" value="Submit" />
+						
 					</fieldset>
 					</form>
 				</div>
