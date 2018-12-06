@@ -1,11 +1,14 @@
 <?php
-	include_once("");
-	$numFila = $_POST['fila'];
-	$numButaca = $_POST['butaca'];
-	$codPasajero = $_POST['idCliente'];
-	$codViaje = $_POST['idViaje'];
+    include_once ("../modelo/pasajeros.php");	
+    include_once ("../modelo/vuelos.php");	
+    include_once ("../modelo/aviones.php");	
 
+	
+	$codPasajero = $_POST['idPasajero'];
+    $codVuelos = $_POST['idVuelo'];
+    
+    $vueloDetalle = vuelos::infoVuelo($codVuelos);
 
-
+    
 
 ?>
