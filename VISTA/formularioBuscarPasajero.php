@@ -20,7 +20,7 @@
 		<br>
 		Reserva su asiento para su proximo vuelo.
 		<br>
-		<script type="text/javascript" src="ajax.js"></script>
+		<script type="text/javascript" src="../js/ajax.js"></script>
 		</article>
 		</div>
 	
