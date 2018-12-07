@@ -10,7 +10,9 @@
     $unVuelo = vuelo::infoVuelo($codVuelos);
     $unAvion = avion::infoAvion($unVuelo->getIdAvion());
 
-    function caracterFila($numeroFila){
+
+
+    function nroFilaCaracter($numeroFila){
         switch ($numeroFila) {
             case 1: return 'A';
                 break;
@@ -31,17 +33,49 @@
             default:
                 # code...
                 break;
-            }
+            }}
 
+    
 
-
-    for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) { 
-        # code...
-        for ($butacasFila=0; $butacasFila <=$unAvion->getButacasFila() ; $butacasFila++) { 
+    function estaOcupado($caracterFila,$butacasFila){
+        $asientos = vuelo::asientosReservados($unVuelo->getIdAvion());
+        $condicion = false;
+        foreach ($asientos as $value) {
             # code...
-            echo "<td><input type='radio' enable checked></td>"; 
+           $condcion1= ($value['fila'] == $fila);
+           $condcion2= ($value['butaca'] == $butacasFila);
+           if ($condcion1 && $condcion2) {
+               # si la fila y butaca son las mismas
+               $condicion = true;
+           } 
         }
+        return $condicion;
+
     }
+    
+
+    echo "<table class='mapaAsientos' border='1px'>";
+    for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) {
+        # recorro por filas
+        $caracterFila = nroFilaCaracter($fila)
+        '<tr>'.$fila.'</tr>';
+        echo "<tr>";
+        for ($butacasFila=0; $butacasFila <=$unAvion->getButacasFila() ; $butacasFila++) {
+            # recorro por butacas en la fila
+            
+            if estaOcupado($caracterFila,$butacasFila){
+                echo "<td><input type='radio' disabled checked></td>"; 
+            }
+            else {
+                # sino puedo reservar
+                echo "<td><input type='radio' checked></td>"; 
+            }
+            
+            
+        }
+        echo"</tr>";
+    }
+    echo "</table>";
 
     
 
