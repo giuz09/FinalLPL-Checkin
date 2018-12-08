@@ -4,12 +4,11 @@
     include_once ("../modelo/avion.php");	
 
 	
-	$codPasajero = $_POST['idPasajero'];
-    $codVuelos = $_POST['idVuelo'];
+	//$codPasajero = $_POST['idPasajero'];
+  //  $codVuelos = $_POST['idVuelo'];
     
-    $unVuelo = vuelo::infoVuelo($codVuelos);
-    $unAvion = avion::infoAvion($unVuelo->getIdAvion());
-
+    $unVuelo = vuelo::infoVuelo(1);
+    $unAvion = avion::infoAvion(1);
 
 
     function nroFilaCaracter($numeroFila){
@@ -33,9 +32,7 @@
             default:
                 # code...
                 break;
-            }}
-
-    
+            }}    
 
     function estaReservado($caracterFila,$butacasFila){
         $asientos = vuelo::asientosReservados($unVuelo->getIdAvion());
@@ -47,39 +44,39 @@
            if ($condcion1 && $condcion2) {
                # si la fila y butaca son las mismas
                $condicion = true;
-           } 
+           }
         }
         return $condicion;
 
     }
     
+    
 
     echo "<table class='mapaAsientos' border='1px'>";
     for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) {
         # recorro por filas
-        $caracterFila = nroFilaCaracter($fila)
-        '<tr>'.$fila.'</tr>';
-        echo "<tr>";
+        $caracterFila = nroFilaCaracter($fila);
+        
+        
         for ($butacasFila=0; $butacasFila <=$unAvion->getButacasFila() ; $butacasFila++) {
             # recorro por butacas en la fila
             
-            if estaReservado($caracterFila,$butacasFila){
-                echo "<td>
-                <label class="orange">
-                <input type='radio' name="asiento" value="orange" disabled checked>
-                    <div class="layer"></div>
-                    <div class="button"><span></span></div>
+            if (estaReservado($caracterFila,$butacasFila)){
+                echo "<td> <label class='orange'>
+                <input type='radio' name='asiento' value='orange' disabled checked>
+                    <div class='layer'></div>
+                    <div class='button'><span></span></div>
                 </label>
                 </td>"; 
             }
             else {
                 # sino puedo reservar
-                echo "<td><input type='radio' name="asiento" value="habilitado" checked></td>";
+                echo "<td><input type='radio' name='asiento' value='habilitado' checked></td>";
             }
             
             
         }
-        echo"</tr>";
+        
     }
     echo "</table>";
 
