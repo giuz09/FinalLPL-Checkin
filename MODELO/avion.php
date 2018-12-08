@@ -1,7 +1,7 @@
 <?php
 include_once("base.php");
 
-class Aviones {
+class Avion {
 	
 	private $idAvion;
 	private $fabricante;	
