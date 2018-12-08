@@ -37,7 +37,7 @@
 
     
 
-    function estaOcupado($caracterFila,$butacasFila){
+    function estaReservado($caracterFila,$butacasFila){
         $asientos = vuelo::asientosReservados($unVuelo->getIdAvion());
         $condicion = false;
         foreach ($asientos as $value) {
@@ -63,12 +63,12 @@
         for ($butacasFila=0; $butacasFila <=$unAvion->getButacasFila() ; $butacasFila++) {
             # recorro por butacas en la fila
             
-            if estaOcupado($caracterFila,$butacasFila){
-                echo "<td><input type='radio' disabled checked></td>"; 
+            if estaReservado($caracterFila,$butacasFila){
+                echo "<td><input type='radio' name="asiento" value="deshabilitado" disabled checked></td>"; 
             }
             else {
                 # sino puedo reservar
-                echo "<td><input type='radio' checked></td>"; 
+                echo "<td><input type='radio' name="asiento" value="habilitado" checked></td>";
             }
             
             
