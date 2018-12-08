@@ -19,7 +19,7 @@ class Aviones {
 		function infoAvion($idAvion){	
 		$db = BaseDatos::getInstance();			
 		$sql = "SELECT aviones.* 
-				FROM aviones where idAvion = '".$idAvion"'";
+				FROM aviones where idAvion = '".$idAvion."'";
 		
 		$result=$db->ejecutar($sql);	
 		$datos =$db->resultados($result);

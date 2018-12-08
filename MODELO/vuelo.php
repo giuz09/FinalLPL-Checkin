@@ -19,7 +19,7 @@ class Vuelos {
 		function infoVuelo($idVuelo){	
 		$db = BaseDatos::getInstance();			
 		$sql = "SELECT vuelos.* 
-				FROM vuelos where idVuelo = '".$idVuelo"'";
+				FROM vuelos where idVuelo = '".$idVuelo."'";
 		
 		$result=$db->ejecutar($sql);	
 		$datos =$db->resultados($result);
@@ -42,7 +42,7 @@ class Vuelos {
 			$db = BaseDatos::getInstance();			
 			$sql = "SELECT pasajerosvuelos.fila,pasajerosvuelos.butaca 
 					FROM vuelos 
-					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos'".$idVuelo"'";
+					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos'".$idVuelo."'";
 			
 			$result=$db->ejecutar($sql);	
 			$datos =$db->resultados($result);
