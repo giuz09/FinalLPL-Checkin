@@ -64,7 +64,13 @@
             # recorro por butacas en la fila
             
             if estaReservado($caracterFila,$butacasFila){
-                echo "<td><input type='radio' name="asiento" value="deshabilitado" disabled checked></td>"; 
+                echo "<td>
+                <label class="orange">
+                <input type='radio' name="asiento" value="orange" disabled checked>
+                    <div class="layer"></div>
+                    <div class="button"><span></span></div>
+                </label>
+                </td>"; 
             }
             else {
                 # sino puedo reservar
