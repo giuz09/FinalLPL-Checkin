@@ -33,12 +33,8 @@
 						<table border="1"><tbody>
 							<tr><td><input type="text" name="dni" id="dni"
 							 onKeyup="desplegarDatosPasajero();"></td>	
-								
-							<td><input type="button" id="boton" name="boton" value="Buscar" onClick="desplegarDatosPasajero();"></td></tr>
 					</tbody></table>			
-					</form>
-										
-						
+					</form>						
 				</div>
 				<div id="respuesta"></div>
 				

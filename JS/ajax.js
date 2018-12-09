@@ -16,7 +16,10 @@ function desplegarDatosPasajero(){
 	peticion.open("GET","datosPasajero.php?dni="+valor,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
+
 	//document.write("aa");
+			
+
 	
 	
 	function accion(){ //accion que ocurre cuando ingresa el dni
@@ -26,5 +29,16 @@ function desplegarDatosPasajero(){
 				document.getElementById("respuesta").innerHTML = peticion.responseText;
 			}
 		}
+	}
+
+	function valido(){
+		peticion = obtenerXHR();	
+		var valor = document.getElementById("nroVuelo").value;
+		peticion.open("GET","datosValidos.php?nroVuelo="+valor,true);
+		peticion.onreadystatechange = accion; 
+		peticion.send(null);
+		document.write("aa");
+		alert("El numero indiciado no es valido");
+
 	}
 }

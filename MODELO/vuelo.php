@@ -1,7 +1,7 @@
 <?php
 include_once("base.php");
 
-class Vuelos {
+class Vuelo {
 	
 	private $idVuelo;
 	private $numero;	
@@ -19,7 +19,7 @@ class Vuelos {
 		function infoVuelo($idVuelo){	
 		$db = BaseDatos::getInstance();			
 		$sql = "SELECT vuelos.* 
-				FROM vuelos where idVuelo = '".$idVuelo"'";
+				FROM vuelos where idVuelo = ".$idVuelo;
 		
 		$result=$db->ejecutar($sql);	
 		$datos =$db->resultados($result);
@@ -37,16 +37,32 @@ class Vuelos {
 		$this->idAvion = $datos['idAvion'];
 		}	
 
+		function existeViaje($fechaI){
+			$db = BaseDatos::getInstance();	
+			$sql = "SELECT numero
+					FROM vuelos INNER JOIN pasajerosvuelos 
+					ON  pasajerosvuelos.idVuelo = vuelos.idVuelo AND vuelo.fecha =".$fechaI;		
+			$result=$db->ejecutar($sql);	
+			$datos =$db->resultados($result);
+			return $this->db->query($query)->result_array();		
+
+		}
+
 
 		function asientosReservados($idVuelo){	
 			$db = BaseDatos::getInstance();			
 			$sql = "SELECT pasajerosvuelos.fila,pasajerosvuelos.butaca 
 					FROM vuelos 
-					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos'".$idVuelo"'";
+					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos".$idVuelo;
 			
 			$result=$db->ejecutar($sql);	
 			$datos =$db->resultados($result);
 			return $this->db->query($query)->result_array();		
+		}
+
+		function validoFechaVuelo(){
+		
+			echo "Usuario ya exist";
 		}
 			
 			

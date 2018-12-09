@@ -9,6 +9,8 @@ class Pasajero {
 	private $documento;
 	private $correo;
 	private $telefono;
+
+
 	
 	function __construct(){		
 	}
@@ -45,8 +47,7 @@ class Pasajero {
 		$this->telefono = $datos['telefono'];
 		 
 	
-	}	
-	
+		}	
 
 		
 	public function getIdPasajero()
