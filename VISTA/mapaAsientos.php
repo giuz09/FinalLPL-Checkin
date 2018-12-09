@@ -6,9 +6,13 @@
 	
 	//$codPasajero = $_POST['idPasajero'];
   //  $codVuelos = $_POST['idVuelo'];
-    
-    $unVuelo = vuelo::infoVuelo(1);
-    $unAvion = avion::infoAvion(1);
+    $unVuelo = new Vuelo();
+    $unAvion = new Avion();
+
+    $unVuelo->infoVuelo(1);    
+    $unAvion->infoAvion(1);
+
+    $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdAvion());
 
 
     function nroFilaCaracter($numeroFila){
@@ -35,7 +39,7 @@
             }}    
 
     function estaReservado($caracterFila,$butacasFila){
-        $asientos = vuelo::asientosReservados($unVuelo->getIdAvion());
+        $asientos = $unVuelo->asientosReservados($unVuelo->getIdAvion());
         $condicion = false;
         foreach ($asientos as $value) {
             # code...
