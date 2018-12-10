@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>"Datos persona"</title>
-</head>
-<body>
 <?php
-	//	include_once("buscarPersona.php");
+
 		$dni = $_POST['dni'];
 		$nombre = $_POST['nombre'];
 		$fecha = $_POST['fecha'];
 		$vuelo = $_POST['vuelo'];
 
-		echo "<br>" ."nombre: ".$nombre . "</br>";
-		echo "<br>" ."dni: ".$dni . "</br>";
-		echo "<br>" ."nro de vuelo: ".$vuelo . "</br>";
-		echo "<br>" ."fecha: ".$fecha . "</br>";
-		?>
-</body>
-</html>
+		include_once ("../modelo/pasajero.php");		
+			
+		$unPasajero = new Pasajero();
+		echo("hola");
+		//se realizan las consultas al servidor
+
+		if(!(is_null($unPasajero-> buscarPasajeroDNI($dni))){
+
+				echo"<br><br><br>Nombre y apellido: "."<textarea>".$unPasajero->getNombres().", ".$unPasajero->getApellido()."</textarea><br>";
+		}
+
+?>
 
 
 

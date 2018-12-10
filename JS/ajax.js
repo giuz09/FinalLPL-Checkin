@@ -1,5 +1,4 @@
 
-
 function validoCampos(){
 
 	var dni =document.getElementById('dni').value.length;
@@ -27,11 +26,28 @@ function validoCampos(){
 	
 
 	if (isOK) { //procedo a validar que exista ese viaje
+		//consultoServidor();
 		return isOK;
 	}
 
+	
+	/*	function consultoServidor(){
+		if ($unPasajero->buscarPasajeroDNI(dni); == null) {
+			alert("El nombre ingresado no coincide con el DNI");}
+			else{ //si coincide se busca que esa persona tenga ese viaje ese dia
+				if($unVuelo->existeViaje(fechaViaje,dni,nroVuelo)== null){
+					//el vuelo no existe
+					alert("No tiene un vuelo asociado");
+				}
+				else{ //el vuelo existe
+					return isOK; //se envia el formulario
+				}
+		}
+	}*/
+
 	}
 
+	
 	function obtenerXHR(){
 	req = false;
 	if (window.XMLHttpRequest) {
@@ -47,7 +63,7 @@ function validoCampos(){
 	function desplegarDatosPasajero(){
 	peticion = obtenerXHR();	
 	var valor = document.getElementById("dni").value;
-	peticion.open("GET","datosPasajero.php?dni="+valor,true);
+	peticion.open("GET","muestroDatosPrueba.php?dni="+valor,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
 	//document.write("aa");
@@ -61,4 +77,4 @@ function validoCampos(){
 			}
 		}
 	}	
-}*/
+}
