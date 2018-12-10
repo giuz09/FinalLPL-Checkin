@@ -21,7 +21,7 @@
     $unVuelo->infoVuelo(1);    
     $unAvion->infoAvion(1);
 
-    // $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdAvion());
+    $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdAvion());
 
 
     function nroFilaCaracter($numeroFila){
@@ -43,31 +43,33 @@
             case 8: return 'H';
                 break;
             default:
-                # code...
+                # por defecto
                 break;
             }}    
 
-    // function estaReservado($caracterFila,$butacasFila){
-    //     $asientos = $unVuelo->asientosReservados($unVuelo->getIdAvion());
-    //     $condicion = false;
-    //     foreach ($asientos as $value) {
-    //         # code...
-    //        $condcion1= ($value['fila'] == $fila);
-    //        $condcion2= ($value['butaca'] == $butacasFila);
-    //        if ($condcion1 && $condcion2) {
-    //            # si la fila y butaca son las mismas
-    //            $condicion = true;
-    //        }
-    //     }
-    //     return $condicion;
+    function estaReservado($caracterFila,$butacasFila,$listaAsientos){
+        
+        $condicion = false;
+        
+        while ($row = $listaAsientos) {
+            # code...
+            echo "reservado";
+            echo $row['fila'];
+           $condcion1= ($row['fila'] == $fila);
+           $condcion2= ($row['butaca'] == $butacasFila);
+           
+           if ($condcion1 && $condcion2) {
+               # si la fila y butaca son las mismas
+               $condicion = true;
+           }
+        }
+        return $condicion;
 
-    // }
+    }
     
     
 
-    echo "<table class='mapaAsientos' border='1px'>";
-
-    
+    echo "<table class='mapaAsientos' border='1px'>";   
 
     for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) {
         # recorro por filas
@@ -87,9 +89,10 @@
             }
             else {
                 # en las demas filas se muestra el check para seleccionar el asiento  
-                $condicion = true;                   
+                $condicion = estaReservado($caracterFila,$butacasFila,$listaAsientos);                   
                 if ($condicion){
                     #si no se puede reservar
+                    
                     echo "<td> <label class='orange'>
                     <input type='radio' name='asiento' value='orange' disabled checked>
                         <div class='layer'></div>
@@ -105,12 +108,10 @@
             
             
         }
-        echo "</tr>";
-        
+        echo "</tr>";        
     }
     echo "</table>";
-
-    
-
 ?>
+
+
 </body>
