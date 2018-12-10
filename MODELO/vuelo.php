@@ -49,7 +49,12 @@ class Vuelo {
 			return $datos;			
 		}
 			
-			
+		function reservarAsiento($idVuelo,$idPasajero,$fila,$butaca){	
+			$db = BaseDatos::getInstance();			
+			$sql = "INSERT INTO pasajerosvuelos (fila, butaca, idVuelo, idPasajero) 
+			VALUES ('".$fila."', '".$butaca."', '".$idVuelo."', '".$idPasajero."')";			
+			$result=$db->ejecutar($sql);		
+		}	
 		
 	public function getIdVuelo()
 		{ return $this->idVuelo;}

@@ -22,7 +22,7 @@
     $unAvion->infoAvion($unVuelo->getIdAvion());
     echo "id vuelo: ".$unVuelo->getIdVuelo()." ";
     $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdVuelo());
-    if ($listaAsientos == null) {
+    if (empty($listaAsientos)) {
         # code...
         echo "nulo";
     }
