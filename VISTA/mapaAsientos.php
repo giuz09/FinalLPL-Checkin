@@ -19,9 +19,13 @@
     $unAvion = new Avion();
 
     $unVuelo->infoVuelo(1);    
-    $unAvion->infoAvion(1);
-
-    $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdAvion());
+    $unAvion->infoAvion($unVuelo->getIdAvion());
+    echo "id vuelo: ".$unVuelo->getIdVuelo()." ";
+    $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdVuelo());
+    if ($listaAsientos == null) {
+        # code...
+        echo "nulo";
+    }
 
 
     function nroFilaCaracter($numeroFila){
@@ -51,12 +55,13 @@
         
         $condicion = false;
         
-        while ($row = $listaAsientos) {
+        
+        while ($asiento = $listaAsientos) {
             # code...
             echo "reservado";
             echo $row['fila'];
-           $condcion1= ($row['fila'] == $fila);
-           $condcion2= ($row['butaca'] == $butacasFila);
+           $condcion1= ($asiento['fila'] == $fila);
+           $condcion2= ($asiento['butaca'] == $butacasFila);
            
            if ($condcion1 && $condcion2) {
                # si la fila y butaca son las mismas

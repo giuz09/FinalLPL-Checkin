@@ -44,8 +44,10 @@ class BaseDatos {
 	}
 	}
 	public function filas($result){
+		if (!empty($result)){
 		$this->array=mysqli_fetch_array($result);
 		return $this->array;
+	}
 	}
 	
 	public function cantidad($result){
