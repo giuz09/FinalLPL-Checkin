@@ -22,10 +22,7 @@
     $unAvion->infoAvion($unVuelo->getIdAvion());
     echo "id vuelo: ".$unVuelo->getIdVuelo()." ";
     $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdVuelo());
-    if (empty($listaAsientos)) {
-        # code...
-        echo "nulo";
-    }
+  
 
 
     function nroFilaCaracter($numeroFila){

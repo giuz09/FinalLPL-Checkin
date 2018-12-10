@@ -43,9 +43,15 @@ class Vuelo {
 			$sql = "SELECT fila,butaca 
 					FROM vuelos 
 					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos'".$idVuelo."'";
-			
+			echo "realizo consulta";
 			$result=$db->ejecutar($sql);	
+			if ($result) {
+				# code...
+				echo "posee resultado";
+			}
+
 			$datos =$db->filas($result);
+
 			return $datos;			
 		}
 			
