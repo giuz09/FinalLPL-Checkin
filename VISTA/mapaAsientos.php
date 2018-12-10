@@ -53,19 +53,19 @@
         $condicion = false;
         
         
-        while ($asiento = $listaAsientos) {
-            # code...
-            echo "reservado";
-            echo $row['fila'];
-           $condcion1= ($asiento['fila'] == $fila);
-           $condcion2= ($asiento['butaca'] == $butacasFila);
+        // while ($asiento = $listaAsientos) {
+        //     # code...
+        //     echo "reservado";
+        //     echo $asiento['fila'];
+        //    $condcion1= ($asiento['fila'] == $fila);
+        //    $condcion2= ($asiento['butaca'] == $butacasFila);
            
-           if ($condcion1 && $condcion2) {
-               # si la fila y butaca son las mismas
-               $condicion = true;
-           }
-        }
-        return $condicion;
+        //    if ($condcion1 && $condcion2) {
+        //        # si la fila y butaca son las mismas
+        //        $condicion = true;
+        //    }
+        // }
+        return true;
 
     }
     

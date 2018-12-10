@@ -41,8 +41,8 @@ class Vuelo {
 		function asientosReservados($idVuelo){	
 			$db = BaseDatos::getInstance();			
 			$sql = "SELECT fila,butaca 
-					FROM vuelos 
-					LEFT JOIN pasajerosvuelos ON  pasajerosvuelos.idVuelo = vuelos'".$idVuelo."'";
+					FROM pasajerosvuelos 
+					where idVuelo = '".$idVuelo."'";
 			echo "realizo consulta";
 			$result=$db->ejecutar($sql);	
 			if ($result) {
