@@ -38,20 +38,13 @@ class Vuelo {
 		}	
 
 
-		function asientosReservados($idVuelo){	
+		function asientosReservados($idVuelo,$caracterFila,$butaca){	
 			$db = BaseDatos::getInstance();			
 			$sql = "SELECT fila,butaca 
 					FROM pasajerosvuelos 
-					where idVuelo = '".$idVuelo."'";
-			echo "realizo consulta";
+					where fila = '".$caracterFila."' and butaca = '".$butaca."' and idVuelo = '".$idVuelo."'";
 			$result=$db->ejecutar($sql);	
-			if ($result) {
-				# code...
-				echo "posee resultado";
-			}
-
 			$datos =$db->filas($result);
-
 			return $datos;			
 		}
 			

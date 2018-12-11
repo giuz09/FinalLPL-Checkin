@@ -21,7 +21,7 @@
     $unVuelo->infoVuelo(1);    
     $unAvion->infoAvion($unVuelo->getIdAvion());
     echo "id vuelo: ".$unVuelo->getIdVuelo()." ";
-    $listaAsientos = $unVuelo->asientosReservados($unVuelo->getIdVuelo());
+    
   
 
 
@@ -48,26 +48,7 @@
                 break;
             }}    
 
-    function estaReservado($caracterFila,$butacasFila,$listaAsientos){
-        
-        $condicion = false;
-        
-        
-        // while ($asiento = $listaAsientos) {
-        //     # code...
-        //     echo "reservado";
-        //     echo $asiento['fila'];
-        //    $condcion1= ($asiento['fila'] == $fila);
-        //    $condcion2= ($asiento['butaca'] == $butacasFila);
-           
-        //    if ($condcion1 && $condcion2) {
-        //        # si la fila y butaca son las mismas
-        //        $condicion = true;
-        //    }
-        // }
-        return true;
 
-    }
     
     
 
@@ -91,10 +72,10 @@
             }
             else {
                 # en las demas filas se muestra el check para seleccionar el asiento  
-                $condicion = estaReservado($caracterFila,$butacasFila,$listaAsientos);                   
+                $condicion = $unVuelo->asientosReservados($unVuelo->getIdVuelo(),$caracterFila,$butacasFila);                   
                 if ($condicion){
                     #si no se puede reservar
-                    
+                    echo "reservado";
                     echo "<td> <label class='orange'>
                     <input type='radio' name='asiento' value='orange' disabled checked>
                         <div class='layer'></div>
