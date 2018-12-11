@@ -1,36 +1,5 @@
-
-input {
-  display: none;
-}
-
-.button {
-  display: inline-block;
-  position: relative;
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.button span {
-  display: block;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-
-
-}
-
-.button span:hover {
-  padding: 5px;
-  
-}
-
-.orange .button span {
-  background: #FF5722;
-}
-
-.lime .button span {
-  background: #8BC34A;
+input[type="radio"] {
+  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+  -moz-appearance: checkbox;    /* Firefox */
+  -ms-appearance: checkbox;     /* not currently supported */
 }

@@ -6,7 +6,7 @@ session_start();
 <head>
 	<meta charset="utf-8"/> 
 	<title> Mapa de asiento </title>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
 
@@ -19,13 +19,14 @@ session_start();
     //$codVuelos = $_POST['idVuelo'];
     $unVuelo = new Vuelo();
     $unAvion = new Avion();
+    $unPasajero = new Pasajero();
 
 
     $unVuelo->infoVuelo(1);   
     $unAvion->infoAvion($unVuelo->getIdAvion());
 
     $_SESSION["idVuelo"] = $unVuelo->getIdVuelo();
-    $_SESSION["idPasajero"] = $unVuelo->getIdVuelo();
+    $_SESSION["idPasajero"] = $unPasajero->getIdPasajero();
     $_SESSION["idAvion"] = $unAvion->getIdAvion();
     
     
