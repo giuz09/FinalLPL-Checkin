@@ -1,32 +1,37 @@
 <?php
-/*
-		$dni = $_POST['dni'];
-		$nombre = $_POST['nombre'];
-		$fecha = $_POST['fecha'];
-		$vuelo = $_POST['vuelo'];
 
-		include_once ("../modelo/pasajero.php");		
+		$dni = $_GET['dni'];
+		$nombre = $_GET['nombre'];
+		$fecha = $_GET['fecha'];
+		$vuelo = $_GET['vuelo'];
+
+		include_once ("../modelo/pasajero.php");
+		include_once ("../modelo/vuelo.php");		
 			
 		$unPasajero = new Pasajero();
 		$unVuelo = new Vuelo();
-*/
-
-	
-
-		echo("No se encuentra registrado el viaje cargado, por favor revise los datos");
-	
 
 
-//validacio  event.preventDefault();n del lado del servidor, solamente consulta en la bd si los datos ingresados son datos correctos
-
-/*	if(!(is_null($unPasajero-> buscarPasajeroDNI($dni))){
+///consultas del lado del servidor
+		
+		
+	$unPasajero-> buscarPasajeroDNI($dni, $nombre);
+	if(is_null($unPasajero->getDocumento()))
+	{
 		//si no es nulo significa que existe el pasajero
-		if(!(is_null($unVuelo->existeViaje()))){
+		//if(!(is_null($unVuelo->existeViaje()))){
 		//evalua que exista el viaje avanza a la siguiente pantalla
 			
-		}
+	echo(" no existe");
+			//si ya hizo el check in
+
 	}
-*/
+		
+	
+	else{
+		echo(" existe");
+	}
+
 ?>
 
 
