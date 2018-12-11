@@ -36,7 +36,8 @@
 							<br> -Apellido: <input type="textarea" name="apellido" id="apellido" required><br>
 							<br>Fecha de viaje: <input type= "date" id="fecha" name="fecha" min="07/04/2017" max="07/04/2050" requiered><br>
 							<br>Nro de vuelo: <input type="textarea" id="nroVuelo" name="vuelo" placeholder="AB0089" requiered><br><br>
-							<input type="button" id="boton" name="boton" value="Buscar" onClick="desplegarDatosPasajero();">	
+							<input type="button" id="boton" name="boton" value="Buscar" onClick="
+							return validoCampos();">	
 					</form>
 				</div>
 

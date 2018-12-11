@@ -5,7 +5,7 @@
 
 	var dni =document.getElementById('dni').value.length;
 	var nombre =document.getElementById('nombre').value.length;
-	var fechaViaje =document.getElementById('fechaViajar').value.length;
+	var fechaViaje =document.getElementById('fecha').value.length;
 	var nroVuelo =document.getElementById('nroVuelo').value.length;
 	var isOK=true;
 
@@ -28,9 +28,12 @@
 	
 
 	if (isOK) { //procedo a validar que exista ese viaje
-		desplegarDatosPasajero();
-		return isOK;
+	
+		return desplegarDatosPasajero();
+	} else {
+return isOK;
 	}
+
 
 	}
 
@@ -48,7 +51,7 @@ function obtenerXHR(){
 }
 
 function desplegarDatosPasajero(){
-
+alert('llego');
 	peticion = obtenerXHR();	
 	var valor = document.getElementById("dni").value;
 	peticion.open("GET","muestrodatosPrueba.php?dni="+valor,true);
