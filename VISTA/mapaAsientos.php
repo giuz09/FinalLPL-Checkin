@@ -14,15 +14,20 @@ session_start();
     include_once ("../modelo/pasajero.php");	
     include_once ("../modelo/vuelo.php");	
     include_once ("../modelo/avion.php");
-    $_SESSION["pasajero"] = "pasajero";
+    
 	//$codPasajero = $_POST['idPasajero'];
     //$codVuelos = $_POST['idVuelo'];
     $unVuelo = new Vuelo();
     $unAvion = new Avion();
 
-    $unVuelo->infoVuelo(1);    
+
+    $unVuelo->infoVuelo(1);   
     $unAvion->infoAvion($unVuelo->getIdAvion());
-    echo "id vuelo: ".$unVuelo->getIdVuelo()." ";
+
+    $_SESSION["idVuelo"] = $unVuelo->getIdVuelo();
+    $_SESSION["idPasajero"] = $unVuelo->getIdVuelo();
+    $_SESSION["idAvion"] = $unAvion->getIdAvion();
+    
     
   
 
@@ -77,7 +82,7 @@ session_start();
                     $condicion = $unVuelo->asientosReservados($unVuelo->getIdVuelo(),$caracterFila,$butacasFila);                   
                     if ($condicion){
                         #si no se puede reservar
-                            echo "<td> <label class='orange'>
+                            echo "<td> <label class='deshabilitado'>
                                 <input type='radio' name='asiento' value='".$caracterFila.$butacasFila."' disabled checked>
                                 <div class='layer'></div>
                                 <div class='button'><span></span></div>

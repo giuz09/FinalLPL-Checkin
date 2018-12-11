@@ -11,12 +11,15 @@ session_start();
 <body>
 
 <?php
+include_once ("../modelo/vuelo.php");
 
 $asiento = $_POST['asiento'];
-echo $_SESSION["pasajero"];
+
 if ( $_SESSION["pasajero"] ){
 
-    echo $_SESSION["pasajero"];
+    
+    echo $_SESSION["idVuelo"];
+    
 }
 //  $codVuelos = $_POST['idVuelo'];
 
