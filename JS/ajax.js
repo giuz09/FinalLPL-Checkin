@@ -1,3 +1,43 @@
+
+	
+	function validoCampos(){
+		//validacion del lado del cliente
+
+	var dni =document.getElementById('dni').value.length;
+	var nombre =document.getElementById('nombre').value.length;
+	var fechaViaje =document.getElementById('fecha').value.length;
+	var nroVuelo =document.getElementById('nroVuelo').value.length;
+	var isOK=true;
+
+	if (dni == "") {
+		isOK=false;
+		alert("¡Atención! Debe ingresar su numero de DNI.");
+	};
+	if (nombre =="") {
+		isOK=false;
+		alert("¡Atención! Falta igresar su nombre y apellido.");
+	};
+	if (fechaViaje == "") {
+		isOK=false;
+		alert("¡Atención! Usted no selecciono ningúna fecha de viaje.");
+	};
+	if (nroVuelo == "") {
+		isOK=false;
+		alert("¡Atención! Falta ingresar el numero de vuelo.");
+	};
+	
+
+	if (isOK) { //procedo a validar que exista ese viaje
+	
+		return desplegarDatosPasajero();
+	} else {
+	return isOK;
+	}
+
+
+	}
+
+
 function obtenerXHR(){
 	req = false;
 	if (window.XMLHttpRequest) {
@@ -11,11 +51,13 @@ function obtenerXHR(){
 }
 
 function desplegarDatosPasajero(){
+
 	peticion = obtenerXHR();	
 	var valor = document.getElementById("dni").value;
-	peticion.open("GET","datosPasajero.php?dni="+valor,true);
+	peticion.open("GET","muestrodatosPrueba.php?dni="+valor,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
+	return true;
 	//document.write("aa");
 	
 	
@@ -27,4 +69,7 @@ function desplegarDatosPasajero(){
 			}
 		}
 	}
+
+
+
 }

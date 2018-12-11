@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title> BuscarPersona </title>
+	</head>
+	
+	<body>
+
+		<header>
+		<div></div>
+		</header>  <!-- encabezado con logo de la empresa -->
+
+		<nav> <!-- menu de la pagina --></nav>
+	
+		<div id= "textoInformativo"> <!-- cuadro de texto-->
+		<article><br>
+		<span>Web checkin </span>
+		<br>
+		<br>
+		Reserva su asiento para su proximo vuelo.
+		<br>
+		<script type="text/javascript" src="../js/ajax.js"></script>
+		</article>
+		</div>
+	
+		<section>
+			<article>
+
+				<div id= "contenido"><br><br><br>
+
+					<form method="post">
+
+							<br>DNI: <input type="number" name="dni" id="dni" min="11111111" max="99999999" requiered><br>
+							<br> Nombre: <input type="textarea" name="nombre" id="nombre" required><br>
+							<br> -Apellido: <input type="textarea" name="apellido" id="apellido" required><br>
+							<br>Fecha de viaje: <input type= "date" id="fecha" name="fecha" min="07/04/2017" max="07/04/2050" requiered><br>
+							<br>Nro de vuelo: <input type="textarea" id="nroVuelo" name="nrovuelo" placeholder="AB0089" requiered ><br><br>
+							<input type="button" id="boton" name="boton" value="Buscar" onClick="
+							 validoCampos();">
+					</form>
+				</div>
+
+				<div id="respuesta"></div>
+				
+			</article>
+		</section>
+	</body>
+</html>

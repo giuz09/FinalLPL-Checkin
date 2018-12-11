@@ -1,23 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>"Datos persona"</title>
-</head>
-<body>
 <?php
-	//	include_once("buscarPersona.php");
+/*
 		$dni = $_POST['dni'];
 		$nombre = $_POST['nombre'];
 		$fecha = $_POST['fecha'];
 		$vuelo = $_POST['vuelo'];
 
-		echo "<br>" ."nombre: ".$nombre . "</br>";
-		echo "<br>" ."dni: ".$dni . "</br>";
-		echo "<br>" ."nro de vuelo: ".$vuelo . "</br>";
-		echo "<br>" ."fecha: ".$fecha . "</br>";
-		?>
-</body>
-</html>
+		include_once ("../modelo/pasajero.php");		
+			
+		$unPasajero = new Pasajero();
+		$unVuelo = new Vuelo();
+*/
+
+	
+
+		echo("No se encuentra registrado el viaje cargado, por favor revise los datos");
+	
+
+
+//validacio  event.preventDefault();n del lado del servidor, solamente consulta en la bd si los datos ingresados son datos correctos
+
+/*	if(!(is_null($unPasajero-> buscarPasajeroDNI($dni))){
+		//si no es nulo significa que existe el pasajero
+		if(!(is_null($unVuelo->existeViaje()))){
+		//evalua que exista el viaje avanza a la siguiente pantalla
+			
+		}
+	}
+*/
+?>
 
 
 

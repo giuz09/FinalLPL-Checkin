@@ -47,6 +47,18 @@ class Vuelo {
 			$datos =$db->filas($result);
 			return $datos;			
 		}
+
+
+	/*	function existeViaje($fechaI,$nroVuelo,$dni){
+			$db = BaseDatos::getInstance();	
+			$sql = "SELECT numero
+					FROM vuelos INNER JOIN pasajerosvuelos
+					ON  pasajerosvuelos.idVuelo = vuelos.idVuelo".;		
+			$result=$db->ejecutar($sql);	
+			$datos =$db->resultados($result);
+			return $this->db->query($query)->result_array();		
+
+		}*/
 			
 		function reservarAsiento($idVuelo,$idPasajero,$fila,$butaca){	
 			$db = BaseDatos::getInstance();			
