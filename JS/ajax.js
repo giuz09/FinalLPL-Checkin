@@ -31,7 +31,7 @@
 	
 		return desplegarDatosPasajero();
 	} else {
-return isOK;
+	return isOK;
 	}
 
 
@@ -57,7 +57,7 @@ alert('llego');
 	peticion.open("GET","muestrodatosPrueba.php?dni="+valor,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
-	return true;
+//	return true;
 	//document.write("aa");
 	
 	
