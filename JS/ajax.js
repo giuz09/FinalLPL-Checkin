@@ -1,6 +1,7 @@
 
 	
 	function validoCampos(){
+		//validacion del lado del cliente
 
 	var dni =document.getElementById('dni').value.length;
 	var nombre =document.getElementById('nombre').value.length;
