@@ -51,13 +51,13 @@ function obtenerXHR(){
 }
 
 function desplegarDatosPasajero(){
-alert('llego');
+
 	peticion = obtenerXHR();	
 	var valor = document.getElementById("dni").value;
 	peticion.open("GET","muestrodatosPrueba.php?dni="+valor,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
-//	return true;
+	return true;
 	//document.write("aa");
 	
 	
@@ -69,5 +69,7 @@ alert('llego');
 			}
 		}
 	}
+
+
 
 }

@@ -1,20 +1,23 @@
 <?php
-
+/*
 		$dni = $_POST['dni'];
 		$nombre = $_POST['nombre'];
 		$fecha = $_POST['fecha'];
 		$vuelo = $_POST['vuelo'];
-/*
+
 		include_once ("../modelo/pasajero.php");		
 			
 		$unPasajero = new Pasajero();
 		$unVuelo = new Vuelo();
 */
-		echo("hola");
-		
+
+	
+
+		echo("No se encuentra registrado el viaje cargado, por favor revise los datos");
+	
 
 
-//validacion del lado del servidor, solamente consulta en la bd si los datos ingresados son datos correctos
+//validacio  event.preventDefault();n del lado del servidor, solamente consulta en la bd si los datos ingresados son datos correctos
 
 /*	if(!(is_null($unPasajero-> buscarPasajeroDNI($dni))){
 		//si no es nulo significa que existe el pasajero
