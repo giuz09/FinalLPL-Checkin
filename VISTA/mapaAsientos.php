@@ -51,7 +51,7 @@
 
     
     
-
+            echo "<form name='formulario' id='formulario'>    ";    
     echo "<table class='mapaAsientos' border='1px'>";   
 
     for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) {
@@ -75,7 +75,6 @@
                 $condicion = $unVuelo->asientosReservados($unVuelo->getIdVuelo(),$caracterFila,$butacasFila);                   
                 if ($condicion){
                     #si no se puede reservar
-                    echo "reservado";
                     echo "<td> <label class='orange'>
                     <input type='radio' name='asiento' value='orange' disabled checked>
                         <div class='layer'></div>
@@ -94,6 +93,7 @@
         echo "</tr>";        
     }
     echo "</table>";
+    echo "</form>";
 ?>
 
 
