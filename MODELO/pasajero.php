@@ -25,11 +25,11 @@ class Pasajero {
 	$this->datosPasajero($datos);	
 	}
 
-	function buscarPasajeroVuelo($dni){	
+	function buscarPasajeroVuelo($dni, $nomb){	
 		$db = BaseDatos::getInstance();			
 		$sql = "SELECT idPasajero, apellido, nombres, documento, 
 				correo, telefono 
-				FROM pasajero where documento = ".$documento; 
+				FROM pasajero where documento = '".$documento."' and nombres = '".$nomb."'";
 		
 		$result=$db->ejecutar($sql);	
 		$datos =$db->resultados($result);
