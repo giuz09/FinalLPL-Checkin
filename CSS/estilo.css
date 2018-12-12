@@ -7,7 +7,7 @@ body {
 
 table {
   text-align: left;
-  font-family: arial;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
   width: 75%;
   margin: 30px;
@@ -18,14 +18,14 @@ table {
 	margin: 10px;
 	padding: 10px;
  	text-align: center;
- 	font-family: arial;
+ 	font-family: 'Courier New', Courier, monospace;
  	font-size: 16px; 	
  	border-style: initial;
  }
 
  .mapaAsientos tr {
  	text-align: center;
- 	font-family: arial;
+ 	font-family: 'Courier New', Courier, monospace;
  	font-size: 16px;
  	color: #ff3b3f;
  	background-color: efefef;
@@ -40,13 +40,14 @@ table {
 .topnav {
   overflow: hidden;
   background-color:white;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .topnav a {
   float: right;
   color: #a9a9a9;
   text-align: center;
-  padding: 14px 16px;
+  padding: 34px 16px;
   text-decoration: none;
   font-size: 17px;
 }
