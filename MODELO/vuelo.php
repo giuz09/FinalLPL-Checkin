@@ -49,19 +49,34 @@ class Vuelo {
 			return $this->db->query($query)->result_array();		
 		}
 
+		function obtengoIdVuelo($nroVueloI){
 
-	/*	function existeViaje($fechaI,$nroVuelo,$dni){
 			$db = BaseDatos::getInstance();	
-			$sql = "SELECT numero
-					FROM vuelos INNER JOIN pasajerosvuelos
-					ON  pasajerosvuelos.idVuelo = vuelos.idVuelo".;		
+			$sql = "SELECT idVuelo
+					FROM vuelos
+					WHERE  numero'".$nroVueloI."'";
+
 			$result=$db->ejecutar($sql);	
 			$datos =$db->resultados($result);
-			return $this->db->query($query)->result_array();		
+			return $this->db->query($query)->result_array();	
+		}
 
-		}*/
+
+	
+
+		function existeViajePersona($fechaI,$nroVueloI){
+			$db = BaseDatos::getInstance();	
+			$sql = "SELECT * 
+					FROM vuelos
+			 		WHERE numero=".$nroVueloI." AND fecha ='".$fechaI;
+
+			$result=$db->ejecutar($sql);	
+			$datos =$db->resultados($result);
+			return $this->datosVuelo($datos);		
+
+		}
 			
-			
+		
 		
 	public function getIdVuelo()
 		{ return $this->idVuelo;}

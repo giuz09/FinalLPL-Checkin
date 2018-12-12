@@ -15,21 +15,26 @@
 ///consultas del lado del servidor
 		
 		
-	$unPasajero-> buscarPasajeroDNI($dni, $nombre);
-	if(is_null($unPasajero->getDocumento()))
-	{
-		//si no es nulo significa que existe el pasajero
-		//if(!(is_null($unVuelo->existeViaje()))){
-		//evalua que exista el viaje avanza a la siguiente pantalla
-			
-	echo(" no existe");
-			//si ya hizo el check in
-
-	}
-		
 	
+	$unPasajero->buscarPasajeroVuelo($dni, $nombre); //obtengo la persona
+	if(!(is_null($unPasajero->getDocumento())))
+	{
+
+		echo("la persona existe");
+
+		$unVuelo->existeViajePersona($fecha,$vuelo); // obtengo el vuelo
+		if(!(is_null($unVuelo->getIdVuelo())))
+		{
+
+			echo("el vuelo existe"); //evualuo si ese vuelo corresponde a esa persona
+			echo( $unVuelo->getIdVuelo());
+			echo(" Continuar");
+		}
+			//si ya hizo el check in
+	}
+
 	else{
-		echo(" existe");
+		echo("No existe el vuelo cargado para dicha persona");
 	}
 
 ?>
