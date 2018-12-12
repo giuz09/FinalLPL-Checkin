@@ -4,6 +4,14 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+
+<div class="topnav">
+  
+  
+  <a href="#contact">Contacto</a> 
+  <a href="#news">Check-in</a>
+  <a class="active" href="#home">Bienvenido</a>
+</div>
 	<meta charset="utf-8"/> 
 	<title> Mapa de asiento </title>
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
@@ -83,8 +91,8 @@ session_start();
                     $condicion = $unVuelo->asientosReservados($unVuelo->getIdVuelo(),$caracterFila,$butacasFila);                   
                     if ($condicion){
                         #si no se puede reservar
-                            echo "<td> <label class='deshabilitado'>
-                                <input type='radio' name='asiento' value='".$caracterFila.$butacasFila."' disabled checked>
+                            echo "<td style='background-color:#ff3b3f' > <label class='deshabilitado'>
+                               
                                 <div class='layer'></div>
                                 <div class='button'><span></span></div>
                                 </label>";
@@ -92,7 +100,7 @@ session_start();
                     }
                     else {
                         # sino puedo reservar
-                        echo "<td><input type='radio' name='asiento' value='".$caracterFila.$butacasFila."' checked></td>";
+                        echo "<td style='background-color:#CAEBF2' ><input type='radio' name='asiento'  value='".$caracterFila.$butacasFila."' checked></td>";
                     }
             }                    
         }

@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="utf-8"/> 
 	<title> tarjeta Embarque </title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">

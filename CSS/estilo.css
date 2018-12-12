@@ -1,5 +1,62 @@
-input[type="radio"] {
-  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
-  -moz-appearance: checkbox;    /* Firefox */
-  -ms-appearance: checkbox;     /* not currently supported */
+body {
+  background-color: #efefef;
+  margin: 0;
 }
+
+
+
+table {
+  text-align: left;
+  font-family: arial;
+  font-size: 14px;
+  width: 75%;
+  margin: 30px;
+  border-bottom: 0px solid #efefef;
+}
+
+.mapaAsientos {
+	margin: 10px;
+	padding: 10px;
+ 	text-align: center;
+ 	font-family: arial;
+ 	font-size: 16px; 	
+ 	border-style: initial;
+ }
+
+ .mapaAsientos tr {
+ 	text-align: center;
+ 	font-family: arial;
+ 	font-size: 16px;
+ 	color: #ff3b3f;
+ 	background-color: efefef;
+  	border-style: solid;
+ 	border-radius: 10px;
+ 	border-color: #CAEBF2;
+ }
+ 
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color:white;
+}
+
+.topnav a {
+  float: right;
+  color: #a9a9a9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  color: #ff3b3f;
+}
+
+.topnav a.active {
+  
+  color: #ff3b3f;
+}
+
