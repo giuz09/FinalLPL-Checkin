@@ -32,10 +32,9 @@
 					<form method="post">
 
 							<br>DNI: <input type="number" name="dni" id="dni" min="11111111" max="99999999" requiered><br>
-							<br> Nombre: <input type="textarea" name="nombre" id="nombre" required><br>
-							<br> -Apellido: <input type="textarea" name="apellido" id="apellido" required><br>
+							<br> Apellido: <input type="textarea" name="nombre" id="nombre" required><br>
 							<br>Fecha de viaje: <input type= "date" id="fecha" name="fecha" min="07/04/2017" max="07/04/2050" requiered><br>
-							<br>Nro de vuelo: <input type="textarea" id="nroVuelo" name="nrovuelo" placeholder="AB0089" requiered ><br><br>
+							<br>Nro de vuelo: <input type="number" id="nroVuelo" name="nrovuelo" placeholder="0089" requiered ><br><br>
 							<input type="button" id="boton" name="boton" value="Buscar" onClick="
 							 validoCampos();">
 					</form>

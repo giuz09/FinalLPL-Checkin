@@ -52,13 +52,13 @@ function obtenerXHR(){
 
 function desplegarDatosPasajero(){
 	var d =document.getElementById('dni').value;
-	var n =document.getElementById('nombre').value;
+	var n =document.getElementById('apellido').value;
 	var f =document.getElementById('fecha').value;
 	var v =document.getElementById('nroVuelo').value;
 
 	peticion = obtenerXHR();	
 	
-	peticion.open("GET","muestrodatosPrueba.php?dni="+d+"&nombre="+n+"&fecha="+f+"&vuelo="+f,true);
+	peticion.open("GET","muestrodatosPrueba.php?dni="+d+"&apellido="+n+"&fecha="+f+"&vuelo="+v,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
 	return true;

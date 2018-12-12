@@ -68,7 +68,8 @@ class Vuelo {
 			$db = BaseDatos::getInstance();	
 			$sql = "SELECT * 
 					FROM vuelos
-			 		WHERE numero=".$nroVueloI." AND fecha ='".$fechaI;
+					where numero = '".$nroVueloI."' and fecha = '".$fechaI."'";
+			 	
 
 			$result=$db->ejecutar($sql);	
 			$datos =$db->resultados($result);

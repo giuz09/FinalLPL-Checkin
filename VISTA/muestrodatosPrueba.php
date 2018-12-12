@@ -1,7 +1,7 @@
 <?php
 
 		$dni = $_GET['dni'];
-		$nombre = $_GET['nombre'];
+		$nombre = $_GET['nombre']; //en realidad es el apellido
 		$fecha = $_GET['fecha'];
 		$vuelo = $_GET['vuelo'];
 
@@ -14,21 +14,20 @@
 
 ///consultas del lado del servidor
 		
-		
-	
-	$unPasajero->buscarPasajeroVuelo($dni, $nombre); //obtengo la persona
+	$unPasajero->buscarPasajeroVuelo($dni,$nombre); //obtengo la persona
 	if(!(is_null($unPasajero->getDocumento())))
 	{
-
 		echo("la persona existe");
 
-		$unVuelo->existeViajePersona($fecha,$vuelo); // obtengo el vuelo
+		$unVuelo->existeViajePersona("2018-12-14","1"); // obtengo el vuelo
+		
+		echo ("vuelo : ".strval($vuelo));
+		echo ("fecha : ".strval($fecha));
+
 		if(!(is_null($unVuelo->getIdVuelo())))
 		{
 
 			echo("el vuelo existe"); //evualuo si ese vuelo corresponde a esa persona
-			echo( $unVuelo->getIdVuelo());
-			echo(" Continuar");
 		}
 			//si ya hizo el check in
 	}
