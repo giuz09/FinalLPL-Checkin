@@ -30,16 +30,21 @@ session_start();
 			$condicion = ($unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo()));
 			
 			$_SESSION["idVuelo"] = $unVuelo->getIdVuelo() ;
-			$_SESSION["idPasajero"] = $unPasajero->getIdPasajero();		
+			$_SESSION["idPasajero"] = $unPasajero->getIdPasajero();	
+			$_SESSION["idAvion"] = $unVuelo->getIdAvion();	
 			
-			if(!(is_null($unVuelo->getFila()))){ //si tiene fila asignada y butaca significa que ya hizo el  check in
+			if(($unVuelo->getButaca()) > 1 ){ //si tiene fila asignada y butaca significa que ya hizo el  check in
 				echo "El check in para este vuelo ya fue realizado  --> [IMPRIMIR TRAJETA DE EMBARQUE]";
 
 				echo ("Fila: ".$unVuelo->getFila());
 				echo ("Butaca: ".$unVuelo->getButaca());
 			}
 			else{ //significa que no hizo todavia el check in, dirige a la vista de la grilla para hacerlo.
+				
+				echo '<meta http-equiv="Refresh" content="0;URL= ../vista/mapaAsientos.php">';
 
+				
+				
 			}
 
 		}
@@ -47,6 +52,8 @@ session_start();
 	}
 
 	else{
+
+		
 		echo("No existe el vuelo cargado para dicha persona");
 	}
 	

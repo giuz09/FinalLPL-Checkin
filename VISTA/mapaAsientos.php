@@ -26,23 +26,13 @@ session_start();
     include_once ("../modelo/pasajero.php");	
     include_once ("../modelo/vuelo.php");	
     include_once ("../modelo/avion.php");
-    
-	//$codPasajero = $_POST['idPasajero'];
-    //$codVuelos = $_POST['idVuelo'];
+    	
     $unVuelo = new Vuelo();
     $unAvion = new Avion();
-    $unPasajero = new Pasajero();
-
-
-    $unVuelo->infoVuelo(1);   
-    $unAvion->infoAvion($unVuelo->getIdAvion());
-
-    $_SESSION["idVuelo"] = $unVuelo->getIdVuelo();
-    $_SESSION["idPasajero"] = $unPasajero->getIdPasajero();
-    $_SESSION["idAvion"] = $unAvion->getIdAvion();
     
-    
-  
+
+    $unVuelo->infoVuelo( $_SESSION["idVuelo"]);
+    $unAvion->infoAvion( $_SESSION["idAvion"]);
 
 
     function nroFilaCaracter($numeroFila){
