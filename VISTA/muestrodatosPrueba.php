@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 		$dni = $_GET['dni'];
 		$nombre = $_GET['apellido']; //en realidad es el apellido
@@ -26,6 +27,10 @@
 
 			echo("   -  El vuelo existe"); //evualuo si ese vuelo corresponde a esa persona
 			$unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo());
+			$condicion = ($unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo()));
+			
+			$_SESSION["idVuelo"] = $unVuelo->getIdVuelo() ;
+			$_SESSION["idPasajero"] = $unPasajero->getIdPasajero();		
 			
 			if(!(is_null($unVuelo->getFila()))){ //si tiene fila asignada y butaca significa que ya hizo el  check in
 				echo "El check in para este vuelo ya fue realizado  --> [IMPRIMIR TRAJETA DE EMBARQUE]";
@@ -44,6 +49,7 @@
 	else{
 		echo("No existe el vuelo cargado para dicha persona");
 	}
+	
 
 ?>
 
