@@ -30,9 +30,21 @@ session_start();
 <?php
 include_once ("../modelo/vuelo.php");
 
+
 $asiento = $_POST['asiento'];
+
 echo "Asiento ".$asiento[0]; 
 echo " nro Butaqca ".substr($asiento, 1, 3);
+
+$idVuelo = $_SESSION["idVuelo"];
+$idPasajero = $_SESSION["idPasajero"];
+$idAvion = $_SESSION["idAvion"];
+$unVuelo = new Vuelo();
+
+if (!empty($asiento)) {
+	# code...
+	$unVuelo->reservarAsiento($idVuelo,$idPasajero,$asiento[0],substr($asiento, 1, 3));
+}
 
 
 ?>
