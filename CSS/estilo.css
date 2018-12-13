@@ -1,8 +1,11 @@
 body {
-  background-color: #efefef;
+  background-color: #a9a9a9;
   margin: 0;
   text-align: center;
+  background-image: url(../images/airport-2.png);
+  
 }
+
 
 h1   {
   text-align: center;
@@ -46,10 +49,11 @@ input[type=button], input[type=submit], input[type=reset] {
   background-color: #ff3b3f;
   border: none;
   color: #efefef;
-  padding: 16px 32px;
-  font-size: 16px;
+  padding: 14px 24px;
+  font-size: 18px;
   text-decoration: none;
-  margin: 20px 50px;
+   margin: 20px 50px;
+   margin-bottom: 0px;
   cursor: pointer;
   
   
@@ -58,23 +62,28 @@ input[type=button], input[type=submit], input[type=reset] {
 
 form{
   display: inline-block;
+  padding: 30px;
+  background-color:  rgba(84, 84, 84, 0.5);
   
 }
 
 table {
   text-align: center;  
-  font-family: 'Courier New', Courier, monospace;  
-  background-color: #efefef;
-  border-color: #efefef;
-  border: none;
-  
-  border: solid 10px white;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 20px;
  
+  background-color: rgba(202, 235, 242, 1);
+  border-collapse: collapse;
+  border: 5px #a9a9a9; 
+  color: #545454;
+  
+  
+  
   
 }
 
 tr, td {
-  padding: 3px;
+  padding: 5px;
 }
 
 .topnav {

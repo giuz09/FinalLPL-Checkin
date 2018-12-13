@@ -9,7 +9,7 @@ session_start();
   
   
   <a href="#contact">Contacto</a> 
-  <a class="active" href="#checkinin">Check-in</a>
+  <a class="active" href="formularioBuscarPasajero.php">Check-in</a>
   <a href="#news">Sobre Nosotros</a>
   <a href="#home">Inicio</a>
   
@@ -18,6 +18,7 @@ session_start();
 	<title> MAPA DE ASIENTOS </title>
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
+
 <body>
 <h1> MAPA DE ASIENTOS </h1>
 <h2> ... </h2>
@@ -69,7 +70,7 @@ session_start();
 
 
     
-    
+            echo "<div class='bordes-transparentes' id='padding_box'>";
             echo "<form action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";    
             echo "<table class='mapaAsientos' border='1px'>";   
 
@@ -94,7 +95,7 @@ session_start();
                     $condicion = $unVuelo->asientosReservados($unVuelo->getIdVuelo(),$caracterFila,$butacasFila);                   
                     if ($condicion){
                         #si no se puede reservar
-                            echo "<td style='background-color:#ff3b3f' > <label class='deshabilitado'>
+                            echo "<td style='background-color:#a9a9a9' > <label class='deshabilitado'>
                                
                                 <div class='layer'></div>
                                 <div class='button'><span></span></div>
@@ -112,6 +113,7 @@ session_start();
     echo "</table>";
     echo "<p><input type='submit' value=' Reservar asiento '/></p>";
     echo "</form>";
+    echo "</div>";
 ?>
 
 
