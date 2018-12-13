@@ -11,6 +11,8 @@ class Vuelo {
 	private $horaSalida;
 	private $horaLlegada;
 	private $idAvion;
+	private $butaca;
+	private $fila;
 	
 	function __construct(){		
 	}
@@ -37,6 +39,12 @@ class Vuelo {
 		$this->idAvion = $datos['idAvion'];
 		}	
 
+		function datosViajePasajero($datos){		
+		$this->idVuelo = $datos['idVuelo'];
+		$this->idPasajero = $datos['idPasajero'];
+		$this->fila = $datos['fila'];
+		$this->butaca = $datos['butaca'];
+		}
 
 		function asientosReservados($idVuelo,$caracterFila,$butaca){	
 			$db = BaseDatos::getInstance();			
@@ -48,17 +56,47 @@ class Vuelo {
 			return $datos;			
 		}
 
+		function obtengoIdVuelo($nroVueloI){
 
-	/*	function existeViaje($fechaI,$nroVuelo,$dni){
 			$db = BaseDatos::getInstance();	
-			$sql = "SELECT numero
-					FROM vuelos INNER JOIN pasajerosvuelos
-					ON  pasajerosvuelos.idVuelo = vuelos.idVuelo".;		
+			$sql = "SELECT idVuelo
+					FROM vuelos
+					WHERE  numero'".$nroVueloI."'";
+
 			$result=$db->ejecutar($sql);	
 			$datos =$db->resultados($result);
-			return $this->db->query($query)->result_array();		
+			return $this->db->query($query)->result_array();	
+		}
 
-		}*/
+
+		function existeViaje($idPasa,$idVue){
+			$db = BaseDatos::getInstance();	
+			$sql = "SELECT * 
+					FROM pasajerosvuelos
+					where idPasajero = '".$idPasa."' and idVuelo = '".$idVue."'";
+			 	
+
+			$result=$db->ejecutar($sql);	
+			$datos =$db->resultados($result);
+			return $this->datosViajePasajero($datos);		
+
+		}
+
+
+	
+
+		function existeViajePersona($fechaI,$nroVueloI){
+			$db = BaseDatos::getInstance();	
+			$sql = "SELECT * 
+					FROM vuelos
+					where numero = '".$nroVueloI."' and fecha = '".$fechaI."'";
+			 	
+
+			$result=$db->ejecutar($sql);	
+			$datos =$db->resultados($result);
+			return $this->datosVuelo($datos);		
+
+		}
 			
 		function reservarAsiento($idVuelo,$idPasajero,$fila,$butaca){	
 			$db = BaseDatos::getInstance();			
@@ -66,6 +104,7 @@ class Vuelo {
 			VALUES ('".$fila."', '".$butaca."', '".$idVuelo."', '".$idPasajero."')";			
 			$result=$db->ejecutar($sql);		
 		}	
+		
 		
 	public function getIdVuelo()
 		{ return $this->idVuelo;}
@@ -90,7 +129,11 @@ class Vuelo {
 			
 	public function getIdAvion()
 		{ return $this->idAvion;}		
-		
+	
+	public function getFila()
+		{ return $this->fila;}		
+	public function getButaca()
+		{ return $this->butaca;}			
 		
 	
 	public function setIdVuelo($v)

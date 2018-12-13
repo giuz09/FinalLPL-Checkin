@@ -2,11 +2,11 @@
 	
 	function validoCampos(){
 		//validacion del lado del cliente
-
+//var v =document.getElementById('nrovuelo');
 	var d =document.getElementById('dni').value.length;
-	var n =document.getElementById('nombre').value.length;
+	var n =document.getElementById('apellido').value.length;
 	var f =document.getElementById('fecha').value.length;
-	var v =document.getElementById('nroVuelo').value.length;
+	
 	var isOK=true;
 
 	if (d == "") {
@@ -21,10 +21,10 @@
 		isOK=false;
 		alert("¡Atención! Usted no selecciono ningúna fecha de viaje.");
 	};
-	if (v == "") {
+	/*if (v == "") {
 		isOK=false;
 		alert("¡Atención! Falta ingresar el numero de vuelo.");
-	};
+	};*/
 	
 
 	if (isOK) { //procedo a validar que exista ese viaje
@@ -52,13 +52,14 @@ function obtenerXHR(){
 
 function desplegarDatosPasajero(){
 	var d =document.getElementById('dni').value;
-	var n =document.getElementById('nombre').value;
+	var n =document.getElementById('apellido').value;
 	var f =document.getElementById('fecha').value;
-	var v =document.getElementById('nroVuelo').value;
+	var v =document.getElementById('nrovuelo').value;
 
 	peticion = obtenerXHR();	
+
 	
-	peticion.open("GET","muestrodatosPrueba.php?dni="+d+"&nombre="+n+"&fecha="+f+"&vuelo="+f,true);
+	peticion.open("GET","muestrodatosPrueba.php?dni="+d+"&apellido="+n+"&fecha="+f+"&vuelo="+v,true);
 	peticion.onreadystatechange = accion; 
 	peticion.send(null);
 	return true;
