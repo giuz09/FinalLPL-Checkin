@@ -9,15 +9,18 @@ session_start();
   
   
   <a href="#contact">Contacto</a> 
-  <a href="#news">Check-in</a>
-  <a class="active" href="#home">Bienvenido</a>
+  <a class="active" href="#checkinin">Check-in</a>
+  <a href="#news">Sobre Nosotros</a>
+  <a href="#home">Inicio</a>
+  
 </div>
 	<meta charset="utf-8"/> 
-	<title> Mapa de asiento </title>
+	<title> MAPA DE ASIENTOS </title>
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-
+<h1> MAPA DE ASIENTOS </h1>
+<h2> ... </h2>
 <?php
     include_once ("../modelo/pasajero.php");	
     include_once ("../modelo/vuelo.php");	
@@ -107,9 +110,13 @@ session_start();
         echo "</tr>";        
     }
     echo "</table>";
-    echo "<p><input type='submit' /></p>";
+    echo "<p><input type='submit' value=' Reservar asiento '/></p>";
     echo "</form>";
 ?>
 
 
 </body>
+<div id="footer">
+<div id="footerLeft"> UNPSJB - Laboratorio de Programación y Lenguajes - 2018 </div>
+<div id="footerRight">Desarrollado por Lia moreno y Giuliana Zandomeni </div>
+</div>
