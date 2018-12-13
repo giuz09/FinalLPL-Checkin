@@ -1,7 +1,7 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
+<!--<?php
+//session_start();
+?>-->
+<!--<!DOCTYPE html>
 <html>
 <head>
 
@@ -26,8 +26,9 @@ session_start();
 <h1> TARJETA DE EMBARQUE </h1>
 <h2> ... </h2>
 <body>
-
+-->
 <?php
+/*
 include_once ("../modelo/vuelo.php");
 
 
@@ -45,12 +46,21 @@ if (!empty($asiento)) {
 	# code...
 	$unVuelo->reservarAsiento($idVuelo,$idPasajero,$asiento[0],substr($asiento, 1, 3));
 }
+*/
+require('../pdf/fpdf.php');
 
+
+$pdf = new FPDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(40,10,'¡Hola, Mundo!');
+$pdf->Output();
 
 ?>
-
+<!--
 <div id="footer">
 <div id="footerLeft"> UNPSJB - Laboratorio de Programación y Lenguajes - 2018 </div>
 <div id="footerRight">Desarrollado por Lia moreno y Giuliana Zandomeni </div>
 </div>
 </body>
+-->
