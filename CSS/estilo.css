@@ -25,22 +25,7 @@ h2   {
   color: #ff3b3f;
 }
 
-#footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding-bottom: 20px;  
-  padding-top: 10px;
 
-  background-color: #ff3b3f;
-  color: #efefef;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  font-size: 20px;
-}
-#footerLeft { width: 40%; float: left; display: block}
-#footerRight { width: 40%; float: right; display: block}
 
 
 
@@ -109,4 +94,21 @@ tr, td {
   
   color: #ff3b3f;
 }
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 20px;  
+  padding-top: 10px;
+
+  background-color: rgba(239, 239, 239, 0.5);
+  color: #545454;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 20px;
+}
+#footerLeft { width: 40%; float: left; display: block}
+#footerRight { width: 40%; float: right; display: block}
 
