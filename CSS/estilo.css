@@ -165,4 +165,13 @@ red {
   font-size: 20px;
 }
 
+#footerLeft{
+  float: left;
+}
+
+#footerRight{
+  float: right;
+}
+
+
 
