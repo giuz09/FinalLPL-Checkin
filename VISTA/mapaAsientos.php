@@ -5,17 +5,15 @@ session_start();
 <html>
 <head>
 
-<div class="topnav">
-  
-  
+<div class="topnav">  
   <a href="#contact">Contacto</a> 
   <a class="active" href="formularioBuscarPasajero.php">Check-in</a>
   <a href="#news">Sobre Nosotros</a>
-  <a href="#home">Inicio</a>
-  
+  <a href="#home">Inicio</a> 
 </div>
+
 	<meta charset="utf-8"/> 
-	<title> MAPA DE ASIENTOS </title>
+	<title> mapa de Asientos </title>
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 
@@ -26,23 +24,13 @@ session_start();
     include_once ("../modelo/pasajero.php");	
     include_once ("../modelo/vuelo.php");	
     include_once ("../modelo/avion.php");
-    
-	//$codPasajero = $_POST['idPasajero'];
-    //$codVuelos = $_POST['idVuelo'];
+    	
     $unVuelo = new Vuelo();
     $unAvion = new Avion();
-    $unPasajero = new Pasajero();
-
-
-    $unVuelo->infoVuelo(1);   
-    $unAvion->infoAvion($unVuelo->getIdAvion());
-
-    $_SESSION["idVuelo"] = $unVuelo->getIdVuelo();
-    $_SESSION["idPasajero"] = $unPasajero->getIdPasajero();
-    $_SESSION["idAvion"] = $unAvion->getIdAvion();
     
-    
-  
+
+    $unVuelo->infoVuelo( $_SESSION["idVuelo"]);
+    $unAvion->infoAvion( $_SESSION["idAvion"]);
 
 
     function nroFilaCaracter($numeroFila){
@@ -71,7 +59,7 @@ session_start();
 
     
             echo "<div class='bordes-transparentes' id='padding_box'>";
-            echo "<form action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";    
+            echo "<form class='formularioAsiento' action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";    
             echo "<table class='mapaAsientos' border='1px'>";   
 
             for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) {
