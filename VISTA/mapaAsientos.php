@@ -9,7 +9,8 @@ session_start();
   <a href="#contact">Contacto</a> 
   <a class="active" href="../vista/buscoPasajero">Check-in</a>
   <a href="#news">Sobre Nosotros</a>
-  <a href="#home">Inicio</a> 
+  <a href="../vista/index.html">Inicio</a> 
+  <ia href="../vista/index.html" ><img id="logo"  href="../vista/index.html" src="../images/icono.png"> ADA AIRLINES </ia> 
 </div>
 
 	<meta charset="utf-8"/> 

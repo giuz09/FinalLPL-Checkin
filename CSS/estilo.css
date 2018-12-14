@@ -25,6 +25,34 @@ h2   {
   color: #ff3b3f;
 }
 
+resaltado   {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  color: #545454;
+  padding: 8px;
+  
+  background-color: #CAEBF2;
+}
+
+.cuadroBlanco 
+{
+  
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: 30px;
+  width: 60%;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;  
+  font-size: 18px;
+  padding: 20px 20px;
+  color: #545454;
+  background-color: white;
+  border: 5px;
+  border-color: #545454;
+}
+
+
 label {
   
   font-family: 'Courier New', Courier, monospace;
@@ -91,9 +119,20 @@ tr, td {
   float: right;
   color: #545454;
   text-align: center;
-  padding: 34px 16px;
+  padding: 34px 20px;
   text-decoration: none;
   font-size: 17px;
+}
+
+.topnav ia {
+  float: left;
+  color: #ff3b3f;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  
 }
 
 .topnav a:hover {
@@ -105,11 +144,17 @@ tr, td {
   color: #ff3b3f;
 }
 
+red {
+  
+  color: #ff3b3f;
+}
+
 #footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  position: fixed;
   left: 0;
+  bottom: 0;
+  width: 100%;
+  
   padding-bottom: 20px;  
   padding-top: 10px;
 
@@ -119,6 +164,5 @@ tr, td {
   text-align: center;
   font-size: 20px;
 }
-#footerLeft { width: 40%; float: left; display: block}
-#footerRight { width: 40%; float: right; display: block}
+
 
