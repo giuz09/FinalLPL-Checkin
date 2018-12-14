@@ -34,7 +34,8 @@ session_start();
 			$_SESSION["idAvion"] = $unVuelo->getIdAvion();	
 			
 			if(($unVuelo->getButaca()) > 1 ){ //si tiene fila asignada y butaca significa que ya hizo el  check in
-				echo "El check in para este vuelo ya fue realizado  --> [IMPRIMIR TRAJETA DE EMBARQUE]";
+
+			echo '<meta http-equiv="Refresh" content="0;URL= ../pdf/fpdf/tarjeta.php">';
 
 				echo ("Fila: ".$unVuelo->getFila());
 				echo ("Butaca: ".$unVuelo->getButaca());
@@ -42,8 +43,6 @@ session_start();
 			else{ //significa que no hizo todavia el check in, dirige a la vista de la grilla para hacerlo.
 				
 				echo '<meta http-equiv="Refresh" content="0;URL= ../vista/mapaAsientos.php">';
-
-				
 				
 			}
 

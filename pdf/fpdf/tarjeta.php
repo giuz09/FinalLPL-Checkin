@@ -35,6 +35,7 @@ $row3 =mysql_fetch_array($rec3);
 
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(190,10,'TARJETA DE EMBARQUE / BOARDING PASS: ',0,1,'L');
+$pdf->Image('logo.jpg' , 156 ,14, 42 , 42,'JPG', 'http://www.desarrolloweb.com');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(90,10,'Nombre del pasajero / Passenger Name: ' ,1,0,'L');
 $pdf->Cell(50,10,'		'.$row['apellido'].' '.$row['nombres'],1,1,'L');
