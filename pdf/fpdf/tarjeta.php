@@ -34,33 +34,36 @@ $sql3 = "SELECT *
 $rec3=mysql_query($sql3);
 $row3 =mysql_fetch_array($rec3);
 
+//////////////
 
+///////////////////
 $pdf->SetFont('Times','B',10);
 $pdf->Cell(190,10,'TARJETA DE EMBARQUE / BOARDING PASS: ',0,1,'L');
-$pdf->Image('logo.jpg' , 156 ,14, 42 , 42,'JPG', 'http://www.desarrolloweb.com');
+$pdf->Image('logo.jpg' , 150 ,15, 40 , 39,'JPG', 'http://www.desarrolloweb.com');
 $pdf->SetFont('Arial','B',10);
-$pdf->Cell(90,10,'Nombre del pasajero / Passenger Name: ' ,1,0,'L');
-$pdf->Cell(50,10,'		'.$row['apellido'].' '.$row['nombres'],1,1,'L');
+$pdf->Cell(80,30,'Nombre del pasajero / Passenger Name: ' ,1,0,'L');
+$pdf->Cell(60,30,'		'.$row['apellido'].' '.$row['nombres'],1,0,'L');
+$pdf->Cell(43,30,' ' ,1,1,'L');
+
+/////////////////////////////////////////////
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(50,10,'Desde / From: 	'.$row2['origen'] ,1,0,'L');
-
-$pdf->Cell(90,10, 'Fecha - Hora/ Date - Time: '.$row2['fecha'].' - '.$row2['horaSalida'] ,1,1,'L');
+$pdf->Cell(133,10, 'Fecha - Hora/ Date - Time:	'.$row2['fecha'].' - '.$row2['horaSalida'] ,1,1,'L');
 $pdf->Cell(50,10,'A / To: 	'.$row2['destino'] ,1,0,'L');
-$pdf->Cell(90,10, 'Fecha - Hora/ Date - Time: '.$row2['fecha'].' - '.$row2['horaLlegada'],1,1,'L');
+$pdf->Cell(133,10, 'Fecha - Hora/ Date - Time:	'.$row2['fecha'].' - '.$row2['horaLlegada'],1,1,'L');
 $pdf->SetFont('Arial','B',10);
-
-$pdf->Cell(90,10,'Nro. de vuelo / Flight number: ' ,1,0,'R');
+//////////////////////////////////////////////////
+$pdf->Cell(90,10,'Nro. de vuelo / Flight number: ' ,1,0,'L');
 $pdf->SetFont('Arial','B',18);
-$pdf->Cell(100,10,'AR'.$row2['numero'],1,1,'R');
+$pdf->Cell(93,10,'AR'.$row2['numero'],1,1,'R');
 $pdf->SetFont('Arial','B',10);
-
-$pdf->Cell(90,10,'Asiento / Seat: ' ,1,0,'R');
+$pdf->Cell(90,10,'Asiento / Seat: ' ,1,0,'L');
 $pdf->SetFont('Arial','B',18);
-$pdf->Cell(100,10,$row3['fila'].$row3['butaca'],1,1,'R');
-
+$pdf->Cell(93,10,$row3['fila'].$row3['butaca'],1,1,'R');
+////////////////////////////////////////////////////
 $pdf->SetFont('Arial','B',9);
-$pdf->Cell(190,13,'Recordar presentarse 1:30hr  antes de su vuelo ',1,1,'C');
-$pdf->Image('codigo.jpg' , 11 ,52, 30 , 30,'JPG', 'http://www.desarrolloweb.com');
+$pdf->Cell(183,38,'Recordar presentarse 1:30hr  antes de su vuelo ',1,1,'C');
+$pdf->Image('codigo.jpg' , 11 ,92, 35 , 35,'JPG', 'http://www.desarrolloweb.com');
 /////////////////////////////
 $pdf->Output();
 

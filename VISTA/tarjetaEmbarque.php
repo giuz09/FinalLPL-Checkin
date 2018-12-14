@@ -56,7 +56,7 @@ $unVuelo = new Vuelo();
 
 
 
-echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
+echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Imprimir tarjeta embarque"."></form>";
 //boton que direcciona al pdf le envia idPasajero idVuelo butaca y fila
 
 ?>
