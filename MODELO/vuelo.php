@@ -100,8 +100,9 @@ class Vuelo {
 			
 		function reservarAsiento($idVuelo,$idPasajero,$fila,$butaca){	
 			$db = BaseDatos::getInstance();			
-			$sql = "INSERT INTO pasajerosvuelos (fila, butaca, idVuelo, idPasajero) 
-			VALUES ('".$fila."', '".$butaca."', '".$idVuelo."', '".$idPasajero."')";			
+			$sql = "UPDATE pasajerosvuelos 
+			SET fila =  '".$fila."',butaca =  '".$butaca."'
+			where idVuelo = '".$idVuelo."'and idPasajero = '".$idPasajero."'";			
 			$result=$db->ejecutar($sql);		
 		}	
 		
