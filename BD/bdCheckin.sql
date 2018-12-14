@@ -19,9 +19,20 @@ idAvion INT,
 CONSTRAINT FK_Avion FOREIGN KEY (idAvion) REFERENCES AVIONES(idAvion));
 
 CREATE TABLE PASAJEROSVUELOS 
-(fila INT(50),butaca CHAR(2),
+(fila CHAR(2),butaca INT(50),
 idVuelo INT, idPasajero INT,
 PRIMARY KEY (`idVuelo`, `idPasajero`),
 ----Se establecen las claves foraneas
 CONSTRAINT FK_Vuelo FOREIGN KEY (idVuelo) REFERENCES VUELOS(idVuelo),
 CONSTRAINT FK_Pasajero FOREIGN KEY (idPasajero) REFERENCES PASAJEROS(idPasajero));
+
+
+--Valores por defecto de butcas y fila de pasajerosvuelos seteados en 0
+
+ALTER TABLE PASAJEROSVUELOS
+ADD fila int NOT NULL DEFAULT(0)
+GO
+
+ALTER TABLE PASAJEROSVUELOS
+ADD butaca int NOT NULL DEFAULT(0)
+GO
