@@ -1,7 +1,10 @@
 <?php
 
 ///variables declaradas de manera simulada para poder ejecutar
-$idVue= 1;
+
+
+
+$idVue= ( $_SESSION["idVuelo"]);
 $idPasa= 1;
 $butaca = 'A';
 $fila = 27;
