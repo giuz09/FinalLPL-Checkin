@@ -1,13 +1,12 @@
 <?php
 
 ///variables declaradas de manera simulada para poder ejecutar
+session_start();
+$idVue = $_SESSION["idVuelo"];
+$idPasa = $_SESSION["idPasajero"];
+$butaca = $_SESSION["butaca"];
+$fila = $_SESSION["fila"];
 
-
-
-$idVue= ( $_SESSION["idVuelo"]);
-$idPasa= 1;
-$butaca = 'A';
-$fila = 27;
 
 
 require'fpdf.php';

@@ -18,14 +18,13 @@ session_start();
 	$unPasajero->buscarPasajeroVuelo($dni,$nombre); //obtengo la persona
 	if(!(is_null($unPasajero->getDocumento())))
 	{
-		echo("La persona existe");
 
 		$unVuelo->existeViajePersona($fecha,$vuelo); // obtengo el vuelo
 
 		if(!(is_null($unVuelo->getIdVuelo())))
 		{
 
-			echo("   -  El vuelo existe"); //evualuo si ese vuelo corresponde a esa persona
+			//evualuo si ese vuelo corresponde a esa persona
 			$unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo());
 			$condicion = ($unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo()));
 			
@@ -35,10 +34,9 @@ session_start();
 			
 			if(($unVuelo->getButaca()) > 1 ){ //si tiene fila asignada y butaca significa que ya hizo el  check in
 
-			echo '<meta http-equiv="Refresh" content="0;URL= ../pdf/fpdf/tarjeta.php">';
+			echo "El check-in para esta persona ya fue realizado. Presione el siguiente boton para reimprimir la trajeta de embarque";
+			echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
 
-				echo ("Fila: ".$unVuelo->getFila());
-				echo ("Butaca: ".$unVuelo->getButaca());
 			}
 			else{ //significa que no hizo todavia el check in, dirige a la vista de la grilla para hacerlo.
 				

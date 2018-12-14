@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,6 @@
 <body>
 
 <?php
-
 include_once ("../modelo/vuelo.php");
 
 
@@ -45,6 +46,17 @@ if (!empty($asiento)) {
 	$unVuelo->reservarAsiento($idVuelo,$idPasajero,$asiento[0],substr($asiento, 1, 3));
 }
 
+$_SESSION["fila"]= $asiento[0]; 
+$_SESSION["butaca"]=substr($asiento, 1, 3);
+
+///cargo en el arreglo de sesion la butaca y la fila
+
+
+
+echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
+//boton que direcciona al pdf le envia idPasajero idVuelo butaca y fila
+
+?>
 
 <div id="footer">
 <div id="footerLeft"> UNPSJB - Laboratorio de Programación y Lenguajes - 2018 </div>
