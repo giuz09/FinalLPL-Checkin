@@ -46,10 +46,9 @@ resaltado   {
   font-family: 'Courier New', Courier, monospace;  
   font-size: 18px;
   padding: 20px 20px;
-  color: #545454;
-  background-color: white;
-  border: 5px;
-  border-color: #545454;
+  background-color:  rgba(84, 84, 84, 0.5);
+  color: white;
+  
 }
 
 
@@ -144,9 +143,9 @@ tr, td {
   color: #ff3b3f;
 }
 
-red {
+sky {
   
-  color: #ff3b3f;
+  color: #CAEBF2;
 }
 
 #footer {
