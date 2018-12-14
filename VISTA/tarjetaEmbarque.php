@@ -33,8 +33,6 @@ include_once ("../modelo/vuelo.php");
 
 $asiento = $_POST['asiento'];
 
-echo "Asiento ".$asiento[0]; 
-echo " nro Butaqca ".substr($asiento, 1, 3);
 
 $idVuelo = $_SESSION["idVuelo"];
 $idPasajero = $_SESSION["idPasajero"];
@@ -53,7 +51,7 @@ $_SESSION["butaca"]=substr($asiento, 1, 3);
 
 
 
-echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
+echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Imprimir tarjeta embarque"."></form>";
 //boton que direcciona al pdf le envia idPasajero idVuelo butaca y fila
 
 ?>
