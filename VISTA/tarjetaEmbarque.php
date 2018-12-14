@@ -30,24 +30,27 @@ session_start();
 <?php
 include_once ("../modelo/vuelo.php");
 
+if (!empty($_POST['asiento'])) {
+	# code...
+	$asiento = $_POST['asiento'];
+	$unVuelo->reservarAsiento($idVuelo,$idPasajero,$asiento[0],substr($asiento, 1, 3));
+	echo "Asiento ".$asiento[0]; 
+	echo " nro Butaqca ".substr($asiento, 1, 3);
+	$_SESSION["fila"]= $asiento[0]; 
+	$_SESSION["butaca"]=substr($asiento, 1, 3);
+}
 
-$asiento = $_POST['asiento'];
 
-echo "Asiento ".$asiento[0]; 
-echo " nro Butaqca ".substr($asiento, 1, 3);
+
+
 
 $idVuelo = $_SESSION["idVuelo"];
 $idPasajero = $_SESSION["idPasajero"];
 $idAvion = $_SESSION["idAvion"];
 $unVuelo = new Vuelo();
 
-if (!empty($asiento)) {
-	# code...
-	$unVuelo->reservarAsiento($idVuelo,$idPasajero,$asiento[0],substr($asiento, 1, 3));
-}
 
-$_SESSION["fila"]= $asiento[0]; 
-$_SESSION["butaca"]=substr($asiento, 1, 3);
+
 
 ///cargo en el arreglo de sesion la butaca y la fila
 

@@ -7,7 +7,7 @@ session_start();
 
 <div class="topnav">  
   <a href="#contact">Contacto</a> 
-  <a class="active" href="formularioBuscarPasajero.php">Check-in</a>
+  <a class="active" href="../vista/buscoPasajero">Check-in</a>
   <a href="#news">Sobre Nosotros</a>
   <a href="#home">Inicio</a> 
 </div>
@@ -31,6 +31,7 @@ session_start();
 
     $unVuelo->infoVuelo( $_SESSION["idVuelo"]);
     $unAvion->infoAvion( $_SESSION["idAvion"]);
+    $unVuelo->existeViaje($_SESSION["idPasajero"] ,$_SESSION["idVuelo"]);
 
 
     function nroFilaCaracter($numeroFila){
@@ -57,7 +58,7 @@ session_start();
             }}    
 
 
-    
+            if ($unVuelo->getButaca() == 0){
             echo "<div class='bordes-transparentes' id='padding_box'>";
             echo "<form class='formularioAsiento' action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";    
             echo "<table class='mapaAsientos' border='1px'>";   
@@ -102,6 +103,15 @@ session_start();
     echo "<p><input type='submit' value=' Reservar asiento '/></p>";
     echo "</form>";
     echo "</div>";
+    }
+    else {
+        # si ya esta reservado
+        $_SESSION["fila"]= $unVuelo->getFila(); 
+	    $_SESSION["butaca"]=$unVuelo->getButaca();
+        echo "<form class='formularioAsiento' action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";            
+        echo "<p><input type='submit' value=' Asiento ya reservado '/></p>";
+        echo "</form>";
+    }
 ?>
 
 
