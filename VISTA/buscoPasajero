@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<div class="topnav">  
+	<a href="#contact">Contacto</a> 
+	<a class="active" href="formularioBuscarPasajero.php">Check-in</a>
+	<a href="#news">Sobre Nosotros</a>
+	<a href="#home">Inicio</a> 
+	</div>
 	<meta charset="utf-8">
-	<title> BuscarPersona </title>
+	<title> Buscador de Persona </title>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 	</head>
 	
 	<body>
 
 		<header>
-		<div></div>
-		</header>  <!-- encabezado con logo de la empresa -->
-
-		<nav> <!-- menu de la pagina --></nav>
+		<body>
+		<h1> BUSCADOR DE VUELO </h1>
+		<h2> ... </h2>
+		
 	
 		<div id= "textoInformativo"> <!-- cuadro de texto-->
 		<article><br>
-		<span>Web checkin </span>
-		<br>
-		<br>
-		Reserva su asiento para su proximo vuelo.
-		<br>
 		<script type="text/javascript" src="../js/ajax.js"></script>
 		</article>
 		</div>
@@ -52,4 +54,8 @@
 			</article>
 		</section>
 	</body>
+	<div id="footer">
+	<div id="footerLeft"> UNPSJB - Laboratorio de Programación y Lenguajes - 2018 </div>
+	<div id="footerRight">Desarrollado por Lia moreno y Giuliana Zandomeni </div>
+	</div>
 </html>

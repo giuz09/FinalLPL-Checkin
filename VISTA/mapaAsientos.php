@@ -5,17 +5,15 @@ session_start();
 <html>
 <head>
 
-<div class="topnav">
-  
-  
+<div class="topnav">  
   <a href="#contact">Contacto</a> 
   <a class="active" href="formularioBuscarPasajero.php">Check-in</a>
   <a href="#news">Sobre Nosotros</a>
-  <a href="#home">Inicio</a>
-  
+  <a href="#home">Inicio</a> 
 </div>
+
 	<meta charset="utf-8"/> 
-	<title> MAPA DE ASIENTOS </title>
+	<title> mapa de Asientos </title>
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 
