@@ -59,7 +59,7 @@ session_start();
 
     
             echo "<div class='bordes-transparentes' id='padding_box'>";
-            echo "<form action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";    
+            echo "<form class='formularioAsiento' action='tarjetaEmbarque.php' method='post' name='formulario' id='formulario'>";    
             echo "<table class='mapaAsientos' border='1px'>";   
 
             for ($fila=0; $fila <= $unAvion->getFilas() ; $fila++) {

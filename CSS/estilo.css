@@ -25,7 +25,11 @@ h2   {
   color: #ff3b3f;
 }
 
-
+label {
+  
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
 
 
 
@@ -45,14 +49,21 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
 
-form{
+.formularioAsiento{
   display: inline-block;
   padding: 30px;
   background-color:  rgba(84, 84, 84, 0.5);
-  
 }
 
-table {
+.formularioVuelo{
+  display: inline-block;
+  padding: 60px 80px;
+  margin-top: 0px;
+  background-color:  rgba(84, 84, 84, 0.5);
+  color: white;
+}
+
+.mapaAsientos {
   text-align: center;  
   font-family:Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -62,10 +73,8 @@ table {
   border: 5px #a9a9a9; 
   color: #545454;
   
-  
-  
-  
 }
+
 
 tr, td {
   padding: 5px;
