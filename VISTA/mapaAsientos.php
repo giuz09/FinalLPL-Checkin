@@ -119,5 +119,5 @@ session_start();
 </body>
 <div id="footer">
 <div id="footerLeft"> UNPSJB - Laboratorio de Programación y Lenguajes - 2018 </div>
-<div id="footerRight">Desarrollado por Lia moreno y Giuliana Zandomeni </div>
+<div id="footerRight">Desarrollado por Lia Moreno y Giuliana Zandomeni </div>
 </div>

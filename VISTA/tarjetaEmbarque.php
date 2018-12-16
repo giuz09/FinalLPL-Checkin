@@ -40,19 +40,11 @@ if (!empty($_POST['asiento'])) {
 	# code...
 	$asiento = $_POST['asiento'];
 	$unVuelo->reservarAsiento($idVuelo,$idPasajero,$asiento[0],substr($asiento, 1, 3));
-	echo "Asiento ".$asiento[0]; 
+	echo " Asiento Fila ".$asiento[0]; 
 	echo " nro Butaca ".substr($asiento, 1, 3);
 	$_SESSION["fila"]= $asiento[0]; 
 	$_SESSION["butaca"]=substr($asiento, 1, 3);
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -67,6 +59,6 @@ echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type=".
 
 <div id="footer">
 <div id="footerLeft"> UNPSJB - Laboratorio de Programación y Lenguajes - 2018 </div>
-<div id="footerRight">Desarrollado por Lia moreno y Giuliana Zandomeni </div>
+<div id="footerRight">Desarrollado por Lia Moreno y Giuliana Zandomeni </div>
 </div>
 </body>
