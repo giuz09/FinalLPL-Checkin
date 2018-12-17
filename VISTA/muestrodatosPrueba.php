@@ -45,13 +45,16 @@ session_start();
 			}
 
 		}
+		else{
 			//si ya hizo el check in
+			echo("No existe vuelo cargado para dicha persona");
+		}
 	}
 
 	else{
 
 		
-		echo("No existe el vuelo cargado para dicha persona");
+		echo("No existe vuelo cargado para dicha persona");
 	}
 	
 

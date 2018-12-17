@@ -2,7 +2,7 @@
 	
 	function validoCampos(){
 		//validacion del lado del cliente
-//var v =document.getElementById('nrovuelo');
+	var v =document.getElementById('nrovuelo').value.length;
 	var d =document.getElementById('dni').value.length;
 	var n =document.getElementById('apellido').value.length;
 	var f =document.getElementById('fecha').value.length;
@@ -15,16 +15,16 @@
 	};
 	if (n =="") {
 		isOK=false;
-		alert("¡Atención! Falta igresar su nombre y apellido.");
+		alert("¡Atención! Falta ingresar su apellido.");
 	};
 	if (f == "") {
 		isOK=false;
 		alert("¡Atención! Usted no selecciono ningúna fecha de viaje.");
 	};
-	/*if (v == "") {
+	if (v == "") {
 		isOK=false;
 		alert("¡Atención! Falta ingresar el numero de vuelo.");
-	};*/
+	};
 	
 
 	if (isOK) { //procedo a validar que exista ese viaje

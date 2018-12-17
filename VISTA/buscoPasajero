@@ -43,7 +43,7 @@
 						Fecha de viaje: <input type= "date" id="fecha" name="fecha">
 						<br>
 						<br>
-						Nro de vuelo: <input type="number" id="nrovuelo" name="nrovuelo" placeholder="0089">
+						Nro de vuelo: <input type="number" id="nrovuelo" name="nrovuelo" placeholder="0089" requiered>
 						<br><br>
 						<input type="button" id="boton" name="boton" value="Buscar" onClick="
 							 validoCampos();">
