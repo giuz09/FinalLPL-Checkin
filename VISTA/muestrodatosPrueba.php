@@ -1,5 +1,6 @@
 <?php
 session_start();
+ini_set("session.gc_maxlifetime","7200"); 
 
 		$dni = $_GET['dni'];
 		$nombre = $_GET['apellido']; //en realidad es el apellido
@@ -28,17 +29,30 @@ session_start();
 			$unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo());
 			$condicion = ($unVuelo->existeViaje($unPasajero->getIdPasajero(),$unVuelo->getIdVuelo()));
 			
+  		  if(isset($_SESSION["idVuelo"]) && !empty($_SESSION["idVuelo"])) {
 			$_SESSION["idVuelo"] = $unVuelo->getIdVuelo() ;
 			$_SESSION["idPasajero"] = $unPasajero->getIdPasajero();	
 			$_SESSION["idAvion"] = $unVuelo->getIdAvion();	
+			}
+			else {
+				# la session expiro 
+				echo " La sesión ha expirado, recargue la página ";
+			}
 			
 			
 			if(($unVuelo->getButaca()) > 1 ){ //si tiene fila asignada y butaca significa que ya hizo el  check in
+				if(isset($_SESSION["idVuelo"]) && !empty($_SESSION["idVuelo"])) {
 				$_SESSION["fila"] = $unVuelo->getFila();	
 				$_SESSION["butaca"] = $unVuelo->getButaca();	
+				echo "El check-in para esta persona ya fue realizado. Presione el siguiente boton para reimprimir la trajeta de embarque";
+				echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
+			}
+			else {
+				# la session expiro 
+				echo " La sesión ha expirado, recargue la página ";
+			}
 			
-			echo "El check-in para esta persona ya fue realizado. Presione el siguiente boton para reimprimir la trajeta de embarque";
-			echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
+			
 
 			}
 			else{ //significa que no hizo todavia el check in, dirige a la vista de la grilla para hacerlo.

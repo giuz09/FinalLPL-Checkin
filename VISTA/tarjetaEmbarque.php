@@ -33,6 +33,8 @@ ini_set("session.gc_maxlifetime","7200");
 <?php
 include_once ("../modelo/vuelo.php");
 $unVuelo = new Vuelo();
+
+if(isset($_SESSION["idVuelo"]) && !empty($_SESSION["idVuelo"])) {
 $idVuelo = $_SESSION["idVuelo"];
 $idPasajero = $_SESSION["idPasajero"];
 $idAvion = $_SESSION["idAvion"];
@@ -47,14 +49,14 @@ if (!empty($_POST['asiento'])) {
 	$_SESSION["butaca"]=substr($asiento, 1, 3);
 }
 
-
-
 ///cargo en el arreglo de sesion la butaca y la fila
-
-
-
 echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Imprimir tarjeta embarque"."></form>";
 //boton que direcciona al pdf le envia idPasajero idVuelo butaca y fila
+}
+else {
+	# la session expiro 
+	echo " La sesión ha expirado, recargue la página ";
+}
 
 ?>
 

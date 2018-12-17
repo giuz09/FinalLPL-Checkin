@@ -1,5 +1,6 @@
 <?php
 session_start();
+ini_set("session.gc_maxlifetime","7200"); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +30,9 @@ session_start();
     $unVuelo = new Vuelo();
     $unAvion = new Avion();
     
-
+    if(isset($_SESSION["idVuelo"]) && !empty($_SESSION["idVuelo"])) {
+        #la session esta seteada
+    
     $unVuelo->infoVuelo( $_SESSION["idVuelo"]);
     $unAvion->infoAvion( $_SESSION["idAvion"]);
     $unVuelo->existeViaje($_SESSION["idPasajero"] ,$_SESSION["idVuelo"]);
@@ -113,6 +116,12 @@ session_start();
         echo "<p><input type='submit' value=' Asiento ya reservado '/></p>";
         echo "</form>";
     }
+}
+else {
+    # la session expiro 
+    echo " La sesión ha expirado, recargue la página ";
+}
+
 ?>
 
 
