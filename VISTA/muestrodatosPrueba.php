@@ -32,8 +32,11 @@ session_start();
 			$_SESSION["idPasajero"] = $unPasajero->getIdPasajero();	
 			$_SESSION["idAvion"] = $unVuelo->getIdAvion();	
 			
+			
 			if(($unVuelo->getButaca()) > 1 ){ //si tiene fila asignada y butaca significa que ya hizo el  check in
-
+				$_SESSION["fila"] = $unVuelo->getFila();	
+				$_SESSION["butaca"] = $unVuelo->getButaca();	
+			
 			echo "El check-in para esta persona ya fue realizado. Presione el siguiente boton para reimprimir la trajeta de embarque";
 			echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";
 
