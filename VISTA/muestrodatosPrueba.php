@@ -40,7 +40,7 @@ session_start();
 				
 				$_SESSION["fila"] = $unVuelo->getFila();	
 				$_SESSION["butaca"] = $unVuelo->getButaca();	
-				echo "El check-in para esta persona ya fue realizado. Presione el siguiente boton para reimprimir la trajeta de embarque";
+				echo "<red>El check-in para esta persona ya fue realizado. Presione el siguiente boton para reimprimir la trajeta de embarque</red>";
 				echo"<form method="."post"." action="."../pdf/fpdf/tarjeta.php"."><input type="."submit"." value="."Reimprimir tarjeta de embarque"."></form>";	
 
 			}
@@ -53,7 +53,7 @@ session_start();
 		}
 		else{
 			//si ya hizo el check in
-			echo("No existe vuelo cargado para dicha persona");
+			echo("<red>No existe vuelo cargado para dicha persona</red>");
 		}
 	}
 
